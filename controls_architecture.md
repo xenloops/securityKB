@@ -73,9 +73,40 @@
     Architecture: Error Handling and Logging
   </summary>
   
-Info
+  * Use a single, vetted logging approach/framework system-wide.
+  * Send logs securely to a remote system for analysis and escalation.
 </details>
 
+<details>
+  <summary>
+    Architecture: Data Protection
+  </summary>
+  
+  * Categorize all data processed, transmitted, or stored properly.
+  * Protect sensitive data in transit and at rest as appropriate.
+  * Apply each data category's protection requirements in the architecture, including:
+    * Encryption
+    * Integrity
+    * Confidentiality
+    * Secure retention
+</details>
+
+<details>
+  <summary>
+    Architecture: Communications
+  </summary>
+  
+  * Encrypt communication channels between components.
+  * Components must verify the authenticity of connections.
+</details>
+
+<details>
+  <summary>
+    Architecture: 
+  </summary>
+  
+Info
+</details>
 <details>
   <summary>
     Next
