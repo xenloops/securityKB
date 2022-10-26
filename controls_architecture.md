@@ -29,6 +29,8 @@
   * Use a single vetted authentication mechanism.
   * Log authentication events.
   * Verify consistent strength of all authentication paths.
+  * Avoid sharing unsynchronized state between authentication logic flows.
+  * Use thread-safe functions for authentication.
 </details>
 
 <details>
@@ -42,6 +44,17 @@
   * Use a single vetted access control mechanism.
   * Allocate permissions using role-based access control (RBAC).
   * Use feature- or attribute-based access control (FBAC or ABAC) to check authorization.
+  * Avoid sharing unsynchronized state between access control logic flows.
+  * Use thread-safe functions for access control.
+</details>
+
+<details>
+  <summary>
+    Architecture: Session Management
+  </summary>
+  
+  * Avoid sharing unsynchronized state between session management logic flows.
+  * Use thread-safe functions for session management.
 </details>
 
 <details>
@@ -102,15 +115,55 @@
 
 <details>
   <summary>
-    Architecture: 
+    Architecture (?): Supply Chain
   </summary>
   
-Info
+  * Use a vetted source code control system.
+  * Verify that check-ins are bound to change orders or issue tickets.
+  * Enforce access control and traceability/auditing.
+  * Understand the security posture of all components, including those from third parties.
+  * Never use unsupported, insecure, or deprecated client-side technologies, e.g.:
+    * NSAPI plugins
+    * Flash
+    * Shockwave
+    * ActiveX
+    * Silverlight
+    * NACL
+    * Client-side Java applets
 </details>
+
 <details>
   <summary>
-    Next
+    Architecture: Secure File Uploads
   </summary>
   
-Info
+  * Store uploaded files outside the web root.
+  * If they need to be displayed or downloaded by the system, ensure uploaded files are served:
+    * By octet stream downloads
+    * From an unrelated domain (e.g. cloud storage)
+  * Use an appropriate content security policy (CSP). [OWASP](https://owasp.org/www-community/controls/Content_Security_Policy)
+</details>
+
+<details>
+  <summary>
+    Architecture: Configuration
+  </summary>
+  
+  * Segregate components of differing trust levels with vetted controls, e.g.:
+    * Firewalls
+    * API gateways
+    * Reverse proxies
+    * Cloud-based security groups
+  * 
+</details>
+
+<details>
+  <summary>
+    Architecture (?): Build Pipeline
+  </summary>
+  
+  * When deploying binaries to tainted devices, use binary signatures, trusted connections, and verify endpoints.
+  * Use a tool in the pipeline that automatically reports obsolete or insecure components used in the build.
+  * Sandbox/isolate deployments at the network layer, especially during dangerous actions like deserialization.
+  * Segregate components of different trust levels using vetted security controls.
 </details>
