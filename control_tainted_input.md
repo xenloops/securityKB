@@ -80,22 +80,11 @@
     Tainted input: Deserialization Prevention
   </summary>
   
-  * 
-</details>
-
-<details>
-  <summary>
-    Tainted input: 
-  </summary>
-  
-  * 
-</details>
-
-<details>
-  <summary>
-    Tainted input: 
-  </summary>
-  
-  * 
+  * Encrypt and check the integrity of serialized objects.
+  * Use the most restrictive configuration possible.
+  * Disable unsafe features such as resolving external entities.
+  * Avoid or protect deserialization of untrusted data in both custom code and third-party libraries (e.g. JSON, XML and YAML parsers).
+  * Use JSON.parse to parse JSON in browsers or JavaScript-based backends. 
+  * Never use eval() to parse JSON.
 </details>
 
