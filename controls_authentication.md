@@ -88,12 +88,14 @@ altercation, and interception.
     Authentication: Credential Storage
   </summary>
   
+  * Never store credentials in the clear.
   * Store salted and hashed version of password.
   * Use a currently approved hash algorithm for passwords (ref. NIST)
   * Use a salt at least 32 bits long, unique to each credential, chosen arbitrarily to prevent salt collisions.
   * If using PBKDF2, use at least 100,000 iterations for the hash.
   * If using bcrypt, use as large a work factor as the server performance allows (at least 13).
   * Perform an additional iteration of salting, using a secret value known only to the verifier component. Store the secret salt separate from the password hashes.
+  * Do not store secrets in source code or code repositories.
 </details>
 
 <details>
@@ -111,7 +113,7 @@ altercation, and interception.
 
 <details>
   <summary>
-    Authentication: Lookup Secret Verifiers
+    Authentication: Lookup-Secret Verifiers
   </summary>
   
   Verifiers are OTPs, and must be discarded after use.
@@ -122,25 +124,40 @@ altercation, and interception.
 
 <details>
   <summary>
-    Authentication: 
+    Authentication: Out-of-Band Verifiers
   </summary>
   
-  * 
+  These are usually codes sent via another route than the standard authentication method, e.g. temporary code sent to a known email to verify the user that they then enter along with their login.
+  * Use strong methods like mobile push, secure email, or another secure method for sending authentication codes.
+  * Avoid SMS or PSTN; these are insecure and unencrypted.
+  * Expire verifiers after a short time.
+  * Expire verifiers after one use.
+  * Secure the channel between the authenticator and verifier.
+  * Ensure the verifier keeps only a hashed version on the authentication code.
+  * Generate authentication codes using a secure random number generator, using at least 20 bits of entropy (e.g. a six digit number).
 </details>
 
 <details>
   <summary>
-    Authentication: 
+    Authentication: One-Time Verifiers
   </summary>
-  
-  * 
+
+  These are typically codes that appear in a soft or hard token and change every minute. The user must enter the current code during login.
+  * Change OTPs after a short time; typically one minute.
+  * Protect symmetric keys used to verify OTPs, by using a hardware security module or secure operating system-based key storage.
+  * Use approved cryptographic algorithms in OTP generation, seeding, and verification.
+  * Allow a time-based OTP to be used only once within the validity period.
+  * Alert user and log attempts to use a OTP more than once.
+  * Enable revocation for physical OTP generators in case of loss. Close sessions for revoked devices immediately.
+  * Use biometric authenticators only in conjunction with other factors.
 </details>
 
 <details>
   <summary>
-    Authentication: 
+    Authentication: Services
   </summary>
   
-  * 
+  * Ensure integration secrets do not rely on static passwords.
+  * Do not use the credentials of default accounts.
 </details>
 
