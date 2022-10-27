@@ -1,0 +1,56 @@
+# Access Control (Authorization)
+
+Authorization is allowing access to resources to only those permitted to use them. 
+
+<details>
+  <summary>
+    Access Control: General
+  </summary>
+  
+  * Ensure that users accessing resources hold valid credentials to do so.
+  * Associate users with a well-defined set of roles and privileges.
+  * Protect role and permission metadata from replay or tampering.
+  * Enforce access control rules on a trusted service layer.
+  * 
+</details>
+
+<details>
+  <summary>
+    Access Control: 
+  </summary>
+  
+  * 
+</details>
+
+<details>
+  <summary>
+    Access Control: 
+  </summary>
+  
+  * 
+</details>
+
+<details>
+  <summary>
+    Access Control: 
+  </summary>
+  
+  * 
+</details>
+
+<details>
+  <summary>
+    Access Control: 
+  </summary>
+  
+  * 
+</details>
+
+<details>
+  <summary>
+    Access Control: 
+  </summary>
+  
+  * 
+</details>
+
