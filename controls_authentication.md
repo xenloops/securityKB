@@ -67,6 +67,7 @@ altercation, and interception.
     * Increase delays between allowed attempts
     * Restrict IP address ranges
     * CAPTCHAs
+    * Protect against logins across multiple accounts from same IP
   * Use weak authenticators (e.g. SMS or email) only for secondary authentication or to approve transactions.
   * Send authentication detail changes to user's verified contact method, including:
     * Incorrect login attempt (only first time in a period, to avoid spamming users)
