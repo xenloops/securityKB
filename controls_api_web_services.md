@@ -24,25 +24,38 @@
 
 <details>
   <summary>
-    API and Web Services: 
+    API and Web Services: RESTful Web Services
   </summary>
   
-  * 
+  * Disable RESTful HTTP methods that are not valid for the user or action (e.g. DELETE or PUT on protected resources).
+  * Validate JSON schema before accepting.
+  * Protect RESTful web services that utilize cookies from Cross-Site Request Forgery via the use of at least one of the following: 
+    * Triple or double submit cookie pattern
+    * CSRF nonces
+    * ORIGIN request header checks
+  * Use anti-automation controls for REST services to protect against excessive calls, especially if the API is unauthenticated.
+  * Confirm the incoming Content-Type is the expected one, such as application/xml or application/JSON.
+  * Verify that the message headers and payload are trustworthy and not modified in transit. 
+  * Require strong encryption for transport as it provides both confidentiality and integrity protection. 
+  * Use per-message digital signatures to provide additional assurance for high-security applications (but also have additional complexity).
 </details>
 
 <details>
   <summary>
-    API and Web Services: 
+    API and Web Services: SOAP Web Service
   </summary>
   
-  * 
+  * Validate XSD schema to ensure a properly formed XML document, followed by validation of each input field before any processing of the data.
+  * Sign message payloads using WS-Security to ensure reliable transport between client and service.
 </details>
 
 <details>
   <summary>
-    API and Web Services: 
+    API and Web Services: GraphQL and other Web Service Data Layer
   </summary>
   
-  * 
+  * Use query whitelisting or depth limiting and amount limiting to prevent GraphQL or data layer expression denial of service (DoS)
+  * Use query cost analysis for advanced scenarios.
+  * Use GraphQL or other data layer authorization logic at the business logic layer instead of the GraphQL layer.
 </details>
 
