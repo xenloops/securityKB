@@ -1,3 +1,4 @@
+# Architecture, Design, and Threat Modeling
 
 <details>
   <summary>
@@ -167,3 +168,23 @@
   * Sandbox/isolate deployments at the network layer, especially during dangerous actions like deserialization.
   * Segregate components of different trust levels using vetted security controls.
 </details>
+
+<details>
+  <summary>
+    Architecture: Sample User Stories
+  </summary>
+  
+  * As a user, I want to the application to be built using a secure development lifecycle process.
+  * As a user, I want the application built using threat models.
+  * As a user, I want the application's security to be verified before I use it.
+  * As a user, I want the application to only use secure and authenticated communications.
+  * As a user, I want the application to follow least privilege principals.
+  * As a user, I want all user input to be validated to prevent injection attacks.
+  * As a user, I want the application to use current cryptographic processes and secured properly.
+  * As a user, I want the application to log appropriate data for records and analysis.
+  * As a user, I want my sensitive data identified, classified, and protected to the appropriate levels.
+  * As a user, I want the application's source code to be controlled.
+  * As a user, I want the application to isolate and protect uploaded files.
+  * As a user, I want the application's configuration to be controlled, consistent and protected.
+</details>
+
