@@ -69,3 +69,15 @@
   * CSPs must inform RPs of the last authentication event.
 </details>
 
+
+<details>
+  <summary>
+    Session Management: Sample User Stories
+  </summary>
+  
+  * As a user, I want the application to use sessions to ensure my use is unique and protected.
+  * As a user, I want the application to follow security best practices to session use, generation and management.
+  * As a user, I want the session to time my account out after a period of time of inactivity.
+  * As a user, I want cookie-based sessions to have all the appropriate security settings set.
+  * As a user, I want token based sessions to be using digital signatures, encryption, and other measures to ensure my session cannot be tampered with.
+</details>
