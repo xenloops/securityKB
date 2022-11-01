@@ -162,3 +162,17 @@ altercation, and interception.
   * Do not use the credentials of default accounts.
 </details>
 
+<details>
+  <summary>
+    Authentication: Sample User Stories
+  </summary>
+  
+  * As a user, I want the application to have strong password policies in place for my account.
+  * As a user, I want to change my password and be forced to enter my old one first.
+  * As a user, I want the application to allow passwords longer than 64 characters so I can use phrases.
+  * As a user, I want to use multi-factor authentication.
+  * As a user, I do not want the application to perform mutli-factor over text messages (SMS).
+  * As a user, I want to use my own token generator for multi-factor authentication.
+  * As a user, I want the application to store my password hashed and salted to the current security standards and practices.
+  * As a user, I want the application to follow password management, resets, storage, and utilization best practices.
+</details>
