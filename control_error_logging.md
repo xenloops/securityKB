@@ -51,3 +51,15 @@
   * Use consistent exception handling across the codebase to account for expected and unexpected error conditions.
   * Define a "last resort" error handler is defined which will catch all unhandled exceptions.
 </details>
+
+<details>
+  <summary>
+    Exceptions and Logging: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to avoid logging sensitive data that would result in account information or data exposure.
+  * As a user, I want the application to log security events that would help investigate a potential issue with my account and data.
+  * As a user, I want the application to log all authentication attempts, successful and unsuccessful, for my account.
+  * As a user, I want the application to secure access to the security logs to prevent account information and data exposure.
+  * As a user, I want the application to show errors with minimal information as to not expose unnecessary information about my account or data.
+</details>
