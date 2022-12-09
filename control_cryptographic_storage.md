@@ -65,3 +65,12 @@
   * Never expose key material to the application; instead use an isolated security module like a vault for cryptographic operations.
 </details>
 
+<details>
+  <summary>
+    Cryptographic Storage: Example security user stories
+  </summary>
+  
+  * As a user, I want my sensitive and regulated data to be encrypted while at rest.
+  * As a user, I want the application to use only proven or government approved cryptographic algorithms.
+  * As a user, I want the application to store encryption keys securely with access tightly controlled.
+</details>
