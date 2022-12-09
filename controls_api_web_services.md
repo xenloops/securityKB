@@ -59,3 +59,10 @@
   * Use GraphQL or other data layer authorization logic at the business logic layer instead of the GraphQL layer.
 </details>
 
+<details>
+  <summary>
+    API and Web Services: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to have adequate authentication, session management, and authorization on all web services that have access to my data.
+</details>
