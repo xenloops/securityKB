@@ -87,3 +87,12 @@ build, or deployment scripts and tested automatically.
   * Authenticate HTTP headers added by a trusted proxy or SSO devices, such as a bearer token, by the application.
 </details>
 
+<details>
+  <summary>
+    Configuration security: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to be built in a secure, repeatable, and automated way.
+  * As a user, I want the application to maintain a third-party library dependency management process so no security issues are introduced.
+  * As a user, I want the application to secure the configurations to prevent unauthorized access, modification, or other activities that could expose my data.
+</details>
