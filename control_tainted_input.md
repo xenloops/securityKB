@@ -88,3 +88,10 @@
   * Never use eval() to parse JSON.
 </details>
 
+<details>
+  <summary>
+    Tainted input: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to validate all input and escape output to ensure my data is protected from injection attacks.
+</details>
