@@ -68,3 +68,10 @@ node npm libraries, or server-side DLLs.
   * Configure the web or application server with a whitelist of resources or systems to which the server can send requests or load data/files from.
 </details>
 
+<details>
+  <summary>
+    Files and Resources: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to validate that any files or data uploaded do not cause any adverse impact to functionality, data, or access.
+</details>
