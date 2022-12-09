@@ -42,3 +42,11 @@
   * Protect against sub-domain takeovers or expired domains if the system relies on DNS entries or DNS sub-domains.
 </details>
 
+<details>
+  <summary>
+    Malicious Code: Example security user stories
+  </summary>
+  
+  * As a user, I want the application not to contain malicious capabilities in its source code and third-party libraries.
+  * As a user, I want the application to have its source code and components analyzed for malicious capabilities before I use it.
+</details>
