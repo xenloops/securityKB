@@ -44,3 +44,12 @@
   * Overwrite old or out-of-date data according to data retention requirements.
 </details>
 
+<details>
+  <summary>
+    Data Protection: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to protect my sensitive data from being cached or temporary copies kept that may lead to exposure.
+  * As a user, I want the application to make regular backups of my sensitive data for which recovery is tested regularly.
+  * As a user, I want the application to ensure sensitive data is transmitted securely.
+</details>
