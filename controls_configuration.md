@@ -28,6 +28,9 @@ build, or deployment scripts and tested automatically.
   * Use automated deployment scripts to ensure the application, configuration, and all dependencies can be re-deployed, 
   built from a documented and tested runbook in a reasonable time, or restored from backups in a timely fashion.
   * Allow authorized administrators to verify the integrity of all security-relevant configurations to detect tampering.
+  * When deploying binaries to tainted devices, use binary signatures, trusted connections, and verify endpoints.
+  * Sandbox/isolate deployments at the network layer, especially during dangerous actions like deserialization.
+  * Segregate components of different trust levels using vetted security controls.
 </details>
 
 <details>
