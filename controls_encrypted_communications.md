@@ -44,3 +44,14 @@
   * Enable proper certification revocation, such as with Online Certificate Status Protocol (OCSP) Stapling.
   * Log backend TLS connection failures.
 </details>
+
+<details>
+  <summary>
+    Encrypted Communications: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to use TLS 1.2 or later for all client communications and does not fall back to an unencrypted 
+  or insecure, lower state.
+  * As a user, I want the application to encrypt all communication channels for inbound and outbound connections.
+  * As a user, I want the application to authenticate all external communication connections where my sensitive data is transmitted.
+</details>
