@@ -26,3 +26,11 @@ Threat modeling during the design sprints assists greatly in this process.
   * Monitor for unusual events or activity from a business logic perspective (e.g. attempts to perform actions out of order or actions which a legitimate user would never attempt).
   * Design in configurable alerting for when automated attacks or unusual activity is detected.
 </details>
+
+<details>
+  <summary>
+    Business Logic: Example security user stories
+  </summary>
+  
+  * As a user, I want the application to ensure the business logic is processed, monitored, and controlled within its expected use.
+</details>
