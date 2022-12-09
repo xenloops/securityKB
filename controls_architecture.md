@@ -159,7 +159,7 @@
 
 <details>
   <summary>
-    Architecture: Example usecurity user stories
+    Architecture: Example security user stories
   </summary>
   
   * As a user, I want to the application to be built using a secure development lifecycle process.
