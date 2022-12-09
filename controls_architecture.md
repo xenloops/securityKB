@@ -159,11 +159,19 @@
 
 <details>
   <summary>
-    Architecture (?): Build Pipeline
+    Architecture: Example usecurity user stories
   </summary>
   
-  * When deploying binaries to tainted devices, use binary signatures, trusted connections, and verify endpoints.
-  * Use a tool in the pipeline that automatically reports obsolete or insecure components used in the build.
-  * Sandbox/isolate deployments at the network layer, especially during dangerous actions like deserialization.
-  * Segregate components of different trust levels using vetted security controls.
+  * As a user, I want to the application to be built using a secure development lifecycle process.
+  * As a user, I want the application built using threat models.
+  * As a user, I want the application's security to be verified before I use it.
+  * As a user, I want the application to only use secure and authenticated communications.
+  * As a user, I want the application to follow least privilege principals.
+  * As a user, I want all tainted input to be validated to prevent injection attacks.
+  * As a user, I want the application to use current cryptographic processes properly.
+  * As a user, I want to the application to log appropriate data for records and analysis.
+  * As a user, I want my sensitive data identified, classified, and protected to the appropriate levels.
+  * As a user, I want the application's source code to be controlled.
+  * As a user, I want the application to isolate and protect uploaded files.
+  * As a user, I want the application's configuration to be controlled, consistent, and protected.
 </details>
