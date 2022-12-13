@@ -1,5 +1,7 @@
 # Input and Output
 
+_Also see the [Tainted Input](tainted_input.md) section._
+
 User controlled input (a.k.a. **taint** or **untrusted input**) is one of the top security concerns that must be addressed in every application that has user input capabilities. It is the primary cause of several vulnerabilities that consistently appear in the OWASP Top 10 vunerability lists, like Command Injection and Cross-Site Scripting (XSS). 
 
 Input validation is the top proactive measure to protect against untrusted input. Input validation is performed to ensure only properly formed data is entering the workflow in an application/system to prevent data persisting in a database and tainting downstream components. Input validation needs to happen as early as possible in the data flow, preferably as soon as data are received from an external party.
