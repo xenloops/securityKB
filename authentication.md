@@ -117,7 +117,7 @@ altercation, and interception.
     Authentication: Lookup-Secret Verifiers
   </summary>
   
-  Verifiers are OTPs, and must be discarded after use.
+  * Verifiers are OTPs, and must be discarded after use.
   * Allow lookup secrets to be used only once.
   * Use unpredictable values.
   * Verify that lookup secrets have sufficient randomness (at least 112 bits of entropy) or are salted with a unique and random 32-bit salt and hashed with an approved one-way hash.
@@ -129,6 +129,7 @@ altercation, and interception.
   </summary>
   
   These are usually codes sent via another route than the standard authentication method, e.g. temporary code sent to a known email to verify the user that they then enter along with their login.
+  
   * Use strong methods like mobile push, secure email, or another secure method for sending authentication codes.
   * Avoid SMS or PSTN; these are insecure and unencrypted.
   * Expire verifiers after a short time.
@@ -144,6 +145,7 @@ altercation, and interception.
   </summary>
 
   These are typically codes that appear in a soft or hard token and change every minute. The user must enter the current code during login.
+  
   * Change OTPs after a short time; typically one minute.
   * Protect symmetric keys used to verify OTPs, by using a hardware security module or secure operating system-based key storage.
   * Use approved cryptographic algorithms in OTP generation, seeding, and verification.
