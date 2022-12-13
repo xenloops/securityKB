@@ -6,9 +6,9 @@
   </summary>
 
   Ensure that the configuration provides:
+  
   * A secure, repeatable, and automatable build environment.
-  * Hardened 3rd party library, dependency, and configuration management such that out-of-date or insecure components are blocked from 
-  inclusion in the application.
+  * Hardened 3rd party library, dependency, and configuration management such that out-of-date or insecure components are blocked from inclusion in the application.
   * A secure-by-default configuration, such that administrators and users have to weaken the default security posture.
 </details>
 
@@ -17,13 +17,12 @@
     Configuration security: Build pipeline
   </summary>
   
-Build pipelines provide the ability for repeatable security. When an insecurity is discovered it should be resolved in the source code, 
-build, or deployment scripts and tested automatically.
+Build pipelines provide the ability for repeatable security. When an insecurity is discovered it should be resolved in the source code, build, or deployment scripts and tested automatically.
   
-  * Perform build and deployment processes in a secure and repeatable way by using CI/CD automation, automated configuration management, 
-  and automated deployment scripts.
+  * Perform build and deployment processes in a secure and repeatable way by using CI/CD automation, automated configuration management, and automated deployment scripts.
   * Enable all compiler flags that provide buffer overflow protections and warnings (including stack randomization 
-  and data execution prevention) and break the build if an unsafe pointer, memory, format string, integer, or string operation is found.
+  and data execution prevention) and break the build if an unsafe pointer, memory, format string, integer, 
+  or string operation is found.
   * Harden the server configuration according to the recommendations of application server and frameworks in use.
   * Use automated deployment scripts to ensure the application, configuration, and all dependencies can be re-deployed, 
   built from a documented and tested runbook in a reasonable time, or restored from backups in a timely fashion.
@@ -39,8 +38,7 @@ build, or deployment scripts and tested automatically.
   </summary>
   
   * Use a dependency checker during build or compile time to verify that all components are up-to-date.
-  * Remove all unneeded features, documentation, samples, and configurations (such as sample applications, platform documentation, 
-  and default or example users).
+  * Remove all unneeded features, documentation, samples, and configurations (such as sample applications, platform documentation, and default or example users).
   * If application assets (such as JavaScript libraries, CSS stylesheets, or web fonts) are hosted externally on a content delivery network 
   (CDN) or external provider, use Subresource Integrity (SRI) to validate the integrity of the asset.
   * Ensure that third-party components come from pre-defined, trusted and continually maintained repositories.
@@ -53,8 +51,7 @@ build, or deployment scripts and tested automatically.
     Configuration security: Unintended security disclosure
   </summary>
   
-  * Configure web/application server and framework error messages are configured to deliver user actionable, customized responses to 
-  eliminate any unintended security disclosures.
+  * Configure web/application server and framework error messages are configured to deliver user actionable, customized responses to eliminate any unintended security disclosures.
   * Disable web/application server and framework debug modes in production to eliminate debug features, developer consoles, 
   and unintended security disclosures.
   * Avoid exposing detailed version information of system components in HTTP headers or any part of the HTTP response.
