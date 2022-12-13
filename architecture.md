@@ -1,3 +1,4 @@
+# Architecture
 
 <details>
   <summary>
@@ -62,7 +63,8 @@
     Architecture: Input/Output
   </summary>
   
-  This is a complex topic, covered more completely [in its own page](input&output.md).
+  This is a complex topic, covered more completely [in its own section1](input&output.md).
+  
   * Verify that I/O requirements define how to process data based on content, laws, regulations, and policy.
   * Never use serialization with untrusted clients (or at least adequately protect the serialized data).
   * Verify that all inputs using a trusted and vetted service.
