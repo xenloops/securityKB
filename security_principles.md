@@ -12,7 +12,7 @@
   * Validate all inputs from users and external systems.
   * Authenticate users and components/systems on first use.
   * Authenticate users and components/systems before performing critical functionality.
-* Document everything: 
+* Document everything
 
 
 # Anti-patterns
@@ -24,4 +24,3 @@ Concepts to avoid in every project.
   * Credentials
   * Private keys
   * Anything else that could affect the confidentiality, integrity, or availability of your data
-* 
