@@ -7,7 +7,7 @@
 * Follow these high-level requirements:
   * Handle malicious activity securely and properly to not affect the rest of the application.
   * Verify that source code does not contain:
-    * Time-bombs or other time based attacks.
+    * Time-bombs or other time-based attacks.
     * Functionality to 'phone home' to unauthorized destinations.
     * Back doors, Easter eggs, rootkits, or unauthorized code, especially code controlled by an attacker.
 </details>
@@ -17,7 +17,7 @@
   
 * Use a code analysis tool that can detect potentially malicious code.
 * Verify that the application does not ask for unnecessary or excessive permissions to privacy related features or sensors.
-* Verify that the application source code and third party libraries do not contain:
+* Verify that the application source code and third-party libraries do not contain:
   * Back doors, such as hard-coded or undocumented accounts or keys, code obfuscation, undocumented binary blobs, rootkits, anti-debugging, or 
   insecure debugging features.
   * Out of date, insecure, or hidden functionality that could be used maliciously if discovered.
