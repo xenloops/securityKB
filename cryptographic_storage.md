@@ -5,9 +5,7 @@
 * Cryptographically-Secure Pseudo-Random Number Generator (CSPRNG) - an algorithm that generates random numbers that may be used in cryptographic processes.
 
 <details>
-  <summary>
-    Cryptographic Storage: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure all cryptographic modules fail securely and to handle errors properly.
 * Use a suitable random number generator.
@@ -15,9 +13,7 @@
 </details>
 
 <details>
-  <summary>
-    Cryptographic Storage: Data Classification
-  </summary>
+  <summary> Data Classification </summary>
   
 * Create a privacy impact assessment for every application to classify the data protection needs of any stored data correctly.
 * Store the following data encrypted while at rest:
@@ -27,9 +23,7 @@
 </details>
 
 <details>
-  <summary>
-    Cryptographic Storage: Algorithms
-  </summary>
+  <summary> Algorithms </summary>
   
 * **Never** use custom written cryptographic algorithms.
 * Ensure that cryptographic modules fail securely and errors are handled in a way that does not enable Padding Oracle attacks.
@@ -47,9 +41,7 @@ to avoid leaking information.
 </details>
 
 <details>
-  <summary>
-    Cryptographic Storage: Randomization
-  </summary>
+  <summary> Randomization </summary>
   
 * Generate random values using the cryptographic module's approved cryptographically secure random number generator when these random values are intended to be not guessable.
 * Generate random GUIDs using the GUID v4 algorithm and a CSPRNG.
@@ -57,18 +49,14 @@ to avoid leaking information.
 </details>
 
 <details>
-  <summary>
-    Cryptographic Storage: Secret Management
-  </summary>
+  <summary> Secret Management </summary>
   
 * Use a secrets management solution such as a key vault to securely create, store, control access, to and destroy secrets.
 * Never expose key material to the application; instead use an isolated security module like a vault for cryptographic operations.
 </details>
 
 <details>
-  <summary>
-    Cryptographic Storage: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want my sensitive and regulated data to be encrypted while at rest.
 * As a user, I want the application to use only proven or government approved cryptographic algorithms.

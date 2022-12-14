@@ -1,9 +1,7 @@
 # Encrypted Communications
 
 <details>
-  <summary>
-    Encrypted Communications: General
-  </summary>
+  <summary> General </summary>
   
 * Always use strong encryption, regardless of the sensitivity of the data being transmitted.
 * Enable and order allowed algorithms and ciphers, prioritizing for strength.
@@ -20,18 +18,14 @@
 </details>
 
 <details>
-  <summary>
-    Encrypted Communications: Communication Security
-  </summary>
+  <summary> Communication Security </summary>
   
 * Use TLS for all client connectivity.
 * Do not permit clients to fall back to insecure protocols.
 </details>
 
 <details>
-  <summary>
-    Encrypted Communications: Server Communications Security
-  </summary>
+  <summary> Server Communications Security </summary>
   
 * Use trusted TLS certificates for connections to and from the server. 
 * Where internally generated or self-signed certificates are used, configure the server to only trust specific internal CAs 
@@ -45,9 +39,7 @@ web service calls, database, cloud, serverless, mainframe, external, and partner
 </details>
 
 <details>
-  <summary>
-    Encrypted Communications: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to use TLS 1.2 or later for all client communications and does not fall back to an unencrypted 
 or insecure, lower state.

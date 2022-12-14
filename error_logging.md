@@ -1,9 +1,7 @@
 # Exception Handling and Logging
 
 <details>
-  <summary>
-    Exceptions and Logging: General
-  </summary>
+  <summary> General </summary>
   
 * Focus on creating high quality logs rather than high volume.
 * Avoid collecting or logging sensitive information unless specifically required.
@@ -15,9 +13,7 @@
 </details>
 
 <details>
-  <summary>
-    Exceptions and Logging: Content
-  </summary>
+  <summary> Content </summary>
   
 * Do not log credentials or payment details. 
 * Log any session tokens in an irreversible, hashed form.
@@ -32,9 +28,7 @@
 </details>
 
 <details>
-  <summary>
-    Exceptions and Logging: Log Protection
-  </summary>
+  <summary> Log Protection </summary>
   
 * Protect logs from modification, deletion, and unauthorized access and disclosure.
 * Appropriately encode user-supplied data to prevent log injection.
@@ -43,9 +37,7 @@
 </details>
 
 <details>
-  <summary>
-    Exceptions and Logging: Exception handling
-  </summary>
+  <summary> Exception handling </summary>
   
 * Show generic error messages, potentially with a unique ID which support personnel can use to investigate.
 * Use consistent exception handling across the codebase to account for expected and unexpected error conditions.
@@ -53,9 +45,7 @@
 </details>
 
 <details>
-  <summary>
-    Exceptions and Logging: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to avoid logging sensitive data that would result in account information or data exposure.
 * As a user, I want the application to log security events that would help investigate a potential issue with my account and data.

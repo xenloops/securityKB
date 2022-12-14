@@ -1,9 +1,7 @@
 # Architecture
 
 <details>
-  <summary>
-    Architecture: Secure SDLC
-  </summary>
+  <summary> Secure SDLC </summary>
   
 * Verify you're using a secure SDLC that bakes security practices into each development stage.
 * Use threat modeling for every major design change to identify threats, countermeasures, and risk responses.
@@ -21,9 +19,7 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Authentication
-  </summary>
+  <summary> Authentication </summary>
   
 * Use unique and least-privilege required service accounts for all nonhuman components.
 * Authenticate connections between application components.
@@ -35,9 +31,7 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Access Control
-  </summary>
+  <summary> Access Control </summary>
   
 * Never enforce access controls on the client.
 * Verify that trusted points in the system enforce access controls.
@@ -50,18 +44,14 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Session Management
-  </summary>
+  <summary> Session Management </summary>
   
 * Avoid sharing unsynchronized state between session management logic flows.
 * Use thread-safe functions for session management.
 </details>
 
 <details>
-  <summary>
-    Architecture: Input/Output
-  </summary>
+  <summary> Input/Output </summary>
   
   This is a complex topic, covered more completely [in its own section1](input&output.md).
   
@@ -72,9 +62,7 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Cryptography
-  </summary>
+  <summary> Cryptography </summary>
   
 * Protect data according to their classifications. 
 * Follow established cryptographic key management standards (e.g. NIST SP 800-57).
@@ -84,18 +72,14 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Error Handling and Logging
-  </summary>
+  <summary> Error Handling and Logging </summary>
   
 * Use a single, vetted logging approach/framework system-wide.
 * Send logs securely to a remote system for analysis and escalation.
 </details>
 
 <details>
-  <summary>
-    Architecture: Data Protection
-  </summary>
+  <summary> Data Protection </summary>
   
 * Categorize all data processed, transmitted, or stored properly.
 * Protect sensitive data in transit and at rest as appropriate.
@@ -107,18 +91,14 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Communications
-  </summary>
+  <summary> Communications </summary>
   
 * Encrypt communication channels between components.
 * Components must verify the authenticity of connections.
 </details>
 
 <details>
-  <summary>
-    Architecture (?): Supply Chain
-  </summary>
+  <summary> Supply Chain </summary>
   
 * Use a vetted source code control system.
 * Verify that check-ins are bound to change orders or issue tickets.
@@ -135,21 +115,7 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Secure File Uploads
-  </summary>
-  
-* Store uploaded files outside the web root.
-* If they need to be displayed or downloaded by the system, ensure uploaded files are served:
-  * By octet stream downloads
-  * From an unrelated domain (e.g. cloud storage)
-* Use an appropriate content security policy (CSP). [OWASP](https://owasp.org/www-community/controls/Content_Security_Policy)
-</details>
-
-<details>
-  <summary>
-    Architecture: Configuration
-  </summary>
+  <summary> Configuration </summary>
   
 * Segregate components of differing trust levels with vetted controls, e.g.:
   * Firewalls
@@ -159,9 +125,7 @@
 </details>
 
 <details>
-  <summary>
-    Architecture: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want to the application to be built using a secure development lifecycle process.
 * As a user, I want the application built using threat models.

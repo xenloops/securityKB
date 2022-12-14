@@ -1,9 +1,7 @@
 # API and Web Services
 
 <details>
-  <summary>
-    API and Web Services: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure that adequate authentication, session management, and authorization of all web services are in place.
 * Validate all parameters that transit from a lower to higher trust level.
@@ -11,9 +9,7 @@
 </details>
 
 <details>
-  <summary>
-    API and Web Services: Generic Web Service Security
-  </summary>
+  <summary> Generic Web Service Security </summary>
   
 * Use the same encodings and parsers across all application components to avoid parsing attacks that exploit different parsing behavior.
 * Limit access to administration and management functions to authorized administrators.
@@ -23,9 +19,7 @@
 </details>
 
 <details>
-  <summary>
-    API and Web Services: RESTful Web Services
-  </summary>
+  <summary> RESTful Web Services </summary>
   
 * Disable RESTful HTTP methods that are not valid for the user or action (e.g. DELETE or PUT on protected resources).
 * Validate JSON schema before accepting.
@@ -41,18 +35,14 @@
 </details>
 
 <details>
-  <summary>
-    API and Web Services: SOAP Web Service
-  </summary>
+  <summary> SOAP Web Service </summary>
   
 * Validate XSD schema to ensure a properly formed XML document, followed by validation of each input field before any processing of the data.
 * Sign message payloads using WS-Security to ensure reliable transport between client and service.
 </details>
 
 <details>
-  <summary>
-    API and Web Services: GraphQL and other Web Service Data Layer
-  </summary>
+  <summary> GraphQL and other Web Service Data Layer </summary>
   
 * Use query whitelisting or depth limiting and amount limiting to prevent GraphQL or data layer expression denial of service (DoS)
 * Use query cost analysis for advanced scenarios.
@@ -60,9 +50,7 @@
 </details>
 
 <details>
-  <summary>
-    API and Web Services: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to have adequate authentication, session management, and authorization on all web services that have access to my data.
 </details>

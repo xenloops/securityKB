@@ -3,9 +3,7 @@ Business logic security must be designed into a system and cannot be added using
 Threat modeling during the design sprints assists greatly in this process.
 
 <details>
-  <summary>
-    Business Logic: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure business logic flows are sequential, processed in order, and cannot be bypassed.
 * Include limits in Business logic to detect and prevent automated attacks.
@@ -28,9 +26,7 @@ Threat modeling during the design sprints assists greatly in this process.
 </details>
 
 <details>
-  <summary>
-    Business Logic: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to ensure the business logic is processed, monitored, and controlled within its expected use.
 </details>
