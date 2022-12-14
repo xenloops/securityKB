@@ -3,9 +3,7 @@
 Authorization is allowing access to resources to only those permitted to use them. 
 
 <details>
-  <summary>
-    Access Control: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure that users accessing resources hold valid credentials to do so.
 * Associate users with a well-defined set of roles and privileges.
@@ -23,18 +21,14 @@ Authorization is allowing access to resources to only those permitted to use the
 </details>
 
 <details>
-  <summary>
-    Access Control: Operation Level
-  </summary>
+  <summary> Operation Level </summary>
   
 * Protect sensitive data and APIs against direct object attacks
 * Use a strong anti-CSRF mechanism (preferably built into the framework) to protect authenticated functionality.
 </details>
 
 <details>
-  <summary>
-    Access Control: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to have access controls in place to ensure I can only access what I need to through least-privilege principals.
 * As a user, I want APIs to be protected against direct access attack.
