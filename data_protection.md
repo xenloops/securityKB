@@ -1,12 +1,18 @@
 # Data Protection
 
 <details>
+  <summary> Definitions </summary>
+  
+  Cyber security is mainly concerned with the following essential ingredients:
+  
+* **Confidentiality**: Protect data from unauthorized observation or disclosure, both in transit and when stored.
+* **Integrity**: Protect data from being created, altered or deleted by unauthorized attackers.
+* **Availability**: Ensure data is available to authorized users per requirements.
+</details>
+
+<details>
   <summary> General </summary>
   
-* Ensure the following high-level requirements are met:
-  * **Confidentiality**: Protect data from unauthorized observation or disclosure, both in transit and when stored.
-  * **Integrity**: Protect data from being created, altered or deleted by unauthorized attackers.
-  * **Availability**: Ensure data is available to authorized users per requirements.
 * Prevent sensitive data from being cached in server components such as load balancers and application caches.
 * Protect all cached or temporary copies of sensitive data stored on the server from unauthorized access.
 * Overwrite cached sensitive data after its authorized use.
