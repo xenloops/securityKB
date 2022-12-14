@@ -1,9 +1,7 @@
 # Configuration security
 
 <details>
-  <summary>
-    Configuration security: General
-  </summary>
+  <summary> General </summary>
 
   Ensure that the configuration provides:
   
@@ -13,9 +11,7 @@
 </details>
 
 <details>
-  <summary>
-    Configuration security: Build pipeline
-  </summary>
+  <summary> Build pipeline </summary>
   
 Build pipelines provide the ability for repeatable security. When an insecurity is discovered it should be resolved in the source code, build, or deployment scripts and tested automatically.
   
@@ -33,9 +29,7 @@ built from a documented and tested runbook in a reasonable time, or restored fro
 </details>
 
 <details>
-  <summary>
-    Configuration security: Dependencies
-  </summary>
+  <summary> Dependencies </summary>
   
 * Use a dependency checker during build or compile time to verify that all components are up-to-date.
 * Remove all unneeded features, documentation, samples, and configurations (such as sample applications, platform documentation, and default or example users).
@@ -47,9 +41,7 @@ built from a documented and tested runbook in a reasonable time, or restored fro
 </details>
 
 <details>
-  <summary>
-    Configuration security: Unintended security disclosure
-  </summary>
+  <summary> Unintended security disclosure </summary>
   
 * Configure web/application server and framework error messages are configured to deliver user actionable, customized responses to eliminate any unintended security disclosures.
 * Disable web/application server and framework debug modes in production to eliminate debug features, developer consoles, 
@@ -58,9 +50,7 @@ and unintended security disclosures.
 </details>
 
 <details>
-  <summary>
-    Configuration security: HTTP security headers
-  </summary>
+  <summary> HTTP security headers </summary>
   
 * Use a content type header specifying a safe character set in every HTTP response (e.g., UTF-8, ISO 8859-1).
 * Use Content-Disposition: attachment; filename="api.json" in all API responses (or other appropriate filenames for the content type).
@@ -72,9 +62,7 @@ max-age=15724800; includeSubdomains.
 </details>
 
 <details>
-  <summary>
-    Configuration security: Validate HTTP request header
-  </summary>
+  <summary> Validate HTTP request header </summary>
   
 * Ensure the application server only accepts the HTTP methods in use by the application or API, including pre-flight OPTIONS.
 * Do not use the supplied Origin header for authentication or access control decisions, as the Origin header can easily be 
@@ -85,9 +73,7 @@ to match against, and do not support the "null" origin.
 </details>
 
 <details>
-  <summary>
-    Configuration security: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to be built in a secure, repeatable, and automated way.
 * As a user, I want the application to maintain a third-party library dependency management process so no security issues are introduced.
