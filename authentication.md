@@ -4,9 +4,7 @@ Authentication establishes or confirms a user or component as authentic and that
 altercation, and interception.
 
 <details>
-  <summary>
-    Authoritative Sources 
-  </summary>
+  <summary> Authoritative Sources </summary>
   
 * [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 * [NIST approved hash functions](https://csrc.nist.gov/projects/hash-functions)
@@ -14,9 +12,7 @@ altercation, and interception.
 </details>
 
 <details>
-  <summary>
-    Definitions 
-  </summary>
+  <summary> Definitions </summary>
   
 * **Memorized secrets** include passwords, PINs, patterns, image selections and passphrases. 
 * **One-time password (OTP)**: a secret used once to login, e.g. a code sent by SMS.
@@ -30,35 +26,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Passwords
-  </summary>
-  
-* Require user-entered passwords to have the following qualities:
-  * Be at least 12 characters, allowing for longer (e.g. up to 64).
-  * Allow special characters, e.g.:
-    * Spaces (without truncation)
-    * The full Unicode set, including e.g. emoji and Kanji
-    * Do not limit the number of special characters permitted.
-* Require system-generated initial passwords to have the following qualities:
-  * Be securely randomly generated.
-  * Be at least 6 characters.
-  * Expire after a specified time.
-  * Not allowed to become permanent.
-* Allow users to change their password.
-  * Force entry of current and new passwords for change.
-* Force user to choose a different password if it is a well-known breached password.
-* Display the user's password strength during creation.
-* Avoid forcing password rotation.
-* Allow pasting of passwords, secure browser storage, and password manager autotype functionality.
-* Mask password entry.
-  * Allow user to temporarily unmask their password as entered or display most recently typed character.
-</details>
-
-<details>
-  <summary>
-    Authentication: General
-  </summary>
+  <summary> General </summary>
   
 * Give no indication whether a username or password is valid.
 * Use anti-automation controls, e.g.:
@@ -85,9 +53,31 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Credential Storage
-  </summary>
+  <summary> Passwords </summary>
+  
+* Require user-entered passwords to have the following qualities:
+  * Be at least 12 characters, allowing for longer (e.g. up to 64).
+  * Allow special characters, e.g.:
+    * Spaces (without truncation)
+    * The full Unicode set, including e.g. emoji and Kanji
+    * Do not limit the number of special characters permitted.
+* Require system-generated initial passwords to have the following qualities:
+  * Be securely randomly generated.
+  * Be at least 6 characters.
+  * Expire after a specified time.
+  * Not allowed to become permanent.
+* Allow users to change their password.
+  * Force entry of current and new passwords for change.
+* Force user to choose a different password if it is a well-known breached password.
+* Display the user's password strength during creation.
+* Avoid forcing password rotation.
+* Allow pasting of passwords, secure browser storage, and password manager autotype functionality.
+* Mask password entry.
+  * Allow user to temporarily unmask their password as entered or display most recently typed character.
+</details>
+
+<details>
+  <summary> Credential Storage </summary>
   
 * Never store credentials in the clear.
 * Store salted and hashed version of password.
@@ -100,9 +90,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Credential Recovery
-  </summary>
+  <summary> Credential Recovery </summary>
   
 * Never send the following to recover a login:
   * An initial or recovery secret in cleartext
@@ -113,9 +101,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Lookup-Secret Verifiers
-  </summary>
+  <summary> Lookup-Secret Verifiers </summary>
   
 * Verifiers are OTPs, and must be discarded after use.
 * Allow lookup secrets to be used only once.
@@ -124,9 +110,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Out-of-Band Verifiers
-  </summary>
+  <summary> Out-of-Band Verifiers </summary>
   
   These are usually codes sent via another route than the standard authentication method, e.g. temporary code sent to a known email to verify the user that they then enter along with their login.
   
@@ -140,9 +124,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: One-Time Verifiers
-  </summary>
+  <summary> One-Time Verifiers </summary>
 
   These are typically codes that appear in a soft or hard token and change every minute. The user must enter the current code during login.
   
@@ -156,18 +138,14 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 </details>
 
 <details>
-  <summary>
-    Authentication: Services
-  </summary>
+  <summary> Services </summary>
   
 * Ensure integration secrets do not rely on static passwords.
 * Do not use the credentials of default accounts.
 </details>
 
 <details>
-  <summary>
-    Authentication: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to have strong password policies in place for my account.
 * As a user, I want to change my password and be forced to enter my old one first.
