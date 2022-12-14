@@ -1,4 +1,4 @@
-# Authentication Controls
+# Authentication
 
 Authentication establishes or confirms a user or component as authentic and that the claims made are correct, resistant to impersonation, 
 altercation, and interception.
