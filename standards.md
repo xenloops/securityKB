@@ -1,4 +1,4 @@
-# Cybersecurity Standards
+# Cyber Security Standards
 
 ## NIST
 * [NIST Cybersecurity Framework (NIST CSF)](https://www.nist.gov/cyberframework): a set of guidelines for mitigating organizational cybersecurity risks, 

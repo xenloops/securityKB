@@ -1,4 +1,4 @@
-# Authentication Controls
+# Authentication
 
 Authentication establishes or confirms a user or component as authentic and that the claims made are correct, resistant to impersonation, 
 altercation, and interception.
@@ -120,7 +120,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 * Expire verifiers after one use.
 * Secure the channel between the authenticator and verifier.
 * Ensure the verifier keeps only a hashed version on the authentication code.
-* Generate authentication codes using a secure random number generator, using at least 20 bits of entropy (e.g. a six digit number).
+* Generate authentication codes using a secure random number generator, using at least 20 bits of entropy (e.g. a six-digit number).
 </details>
 
 <details>
@@ -151,7 +151,7 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
 * As a user, I want to change my password and be forced to enter my old one first.
 * As a user, I want the application to allow passwords longer than 64 characters so I can use phrases.
 * As a user, I want to use multi-factor authentication.
-* As a user, I do not want the application to perform mutli-factor over text messages (SMS).
+* As a user, I do not want the application to perform multi-factor over text messages (SMS).
 * As a user, I want to use my own token generator for multi-factor authentication.
 * As a user, I want the application to store my password hashed and salted to the current security standards and practices.
 * As a user, I want the application to follow password management, resets, storage, and utilization best practices.

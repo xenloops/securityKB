@@ -8,7 +8,7 @@ This is a repo into which I'm dumping things that help with application security
 * [Authentication](authentication.md)
 * [Access Control](access_control.md)
 * [Session Management](session_management.md)
-* [Input and Output](input&output.md)
+* [Input and Output](input_output.md)
 * [Tainted Input](tainted_input.md)
 * [Data Protection](data_protection.md)
 * Cryptographic [Communications](encrypted_communications.md) and [Storage](cryptographic_storage.md)
