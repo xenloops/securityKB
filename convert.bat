@@ -3,14 +3,17 @@ rem Combines multiple Markdown files, then uses Pandoc (https://pandoc.org/) to 
 rem it to docx format.
 
 echo.
-echo Delete existing combined file
-del securityKB-main\combined.md
+echo Decompress new zip archive (if exists)
+tar -xf securityKB-main.zip
 echo.
 echo Files being included:
-type securityKB-main\*.md >> securityKB-main\combined.md
+type securityKB-main\*.md >> combined.md
 echo.
 echo Converting combined file to docx
-pandoc --quiet -o security_KB.docx -f markdown -t docx securityKB-main\combined.md
+pandoc --quiet -o security_KB.docx -f markdown -t docx combined.md
+echo.
+echo Delete combined file
+del combined.md
 echo.
 echo Done! New file is security_KB.docx.
 echo.

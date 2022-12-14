@@ -24,3 +24,5 @@ Concepts to avoid in every project.
   * Credentials
   * Private keys
   * Anything else that could affect the confidentiality, integrity, or availability of your data
+
+
