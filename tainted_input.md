@@ -1,9 +1,7 @@
 # Validation, Sanitization, and Output Encoding
 
 <details>
-  <summary>
-    Tainted input: General
-  </summary>
+  <summary> General </summary>
 
 * Ensure input validation and output encoding have a common architecture to prevent injection attacks.
 * Verify that input data is strongly typed, validated, range or length checked, and sanitized or filtered.
@@ -11,9 +9,7 @@
 </details>
 
 <details>
-  <summary>
-    Tainted input: Input Validation
-  </summary>
+  <summary> Input Validation </summary>
   
 * Defend against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters.
 * Protect against mass parameter assignment attacks and against unsafe parameter assignment.
@@ -23,9 +19,7 @@
 </details>
 
 <details>
-  <summary>
-    Tainted input: Sanitization and Sandboxing
-  </summary>
+  <summary> Sanitization and Sandboxing </summary>
   
 * Properly sanitize:
   * All user input.
@@ -40,9 +34,7 @@
 </details>
 
 <details>
-  <summary>
-    Tainted input: Output Encoding
-  </summary>
+  <summary> Output Encoding </summary>
   
 * Use output encoding relevant for the interpreter and context required (e.g. for HTML values, HTML attributes, JavaScript, URL Parameters, 
 HTTP headers, or SMTP).
@@ -65,9 +57,7 @@ HTTP headers, or SMTP).
 </details>
 
 <details>
-  <summary>
-    Tainted input: Unmanaged Code
-  </summary>
+  <summary> Unmanaged Code </summary>
   
 * Use memory-safe String functionality.
 * Use safe memory copy and pointer arithmetic functionality.
@@ -76,9 +66,7 @@ HTTP headers, or SMTP).
 </details>
 
 <details>
-  <summary>
-    Tainted input: Deserialization Prevention
-  </summary>
+  <summary> Deserialization Prevention </summary>
   
 * Encrypt and check the integrity of serialized objects.
 * Use the most restrictive configuration possible.
@@ -89,9 +77,7 @@ HTTP headers, or SMTP).
 </details>
 
 <details>
-  <summary>
-    Tainted input: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to validate all input and escape output to ensure my data is protected from injection attacks.
 </details>
