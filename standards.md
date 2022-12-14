@@ -27,9 +27,11 @@ controls for all U.S. federal information systems except those related to nation
 * [ISO/IEC 21827](https://www.iso.org/standard/44716.html): Capability Maturity Model
 
 ## OWASP
-* []()
-* []()
-* []()
-* []()
-* []()
-* 
+* [Top 10 List](https://owasp.org/www-project-top-ten/)
+* [Top 10 Proactive Controls](https://owasp.org/www-project-proactive-controls/)
+* [Mobile Top 10](https://owasp.org/www-project-mobile-top-10/)
+* [Serverless Top 10](https://owasp.org/www-project-serverless-top-10/)
+* [IoT Top 10](https://wiki.owasp.org/index.php/OWASP_Internet_of_Things_Project#tab=IoT_Top_10)
+* [Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/)
+* [API Security Project](https://owasp.org/www-project-api-security/)
+* [Cheat Sheet Series](https://cheatsheetseries.owasp.org/Glossary.html)
