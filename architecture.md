@@ -53,7 +53,7 @@
 <details>
   <summary> Input/Output </summary>
   
-  This is a complex topic, covered more completely [in its own section1](input&output.md).
+  This is a complex topic, covered more completely in the Input and Output and Tainted Input sections.
   
 * Verify that I/O requirements define how to process data based on content, laws, regulations, and policy.
 * Never use serialization with untrusted clients (or at least adequately protect the serialized data).
