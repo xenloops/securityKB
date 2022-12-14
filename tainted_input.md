@@ -1,4 +1,4 @@
-# Validation, Sanitization, and Output Encoding
+# Tainted Input
 
 <details>
   <summary> General </summary>
