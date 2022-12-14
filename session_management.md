@@ -15,7 +15,7 @@
 * Generate a new session token upon user authentication.
 * Create session tokens using at least 64 bits of entropy.
 * Store session tokens only in the browser using secure cookies.
-* Generate session tokens using approved cryptographic algortihms.
+* Generate session tokens using approved cryptographic algorithms.
 </details>
 
 <details>
@@ -30,7 +30,7 @@
 <details>
   <summary> Tokens </summary>
   
-* Do not accept OAuth and refresh tokens as presense of the subscriber.
+* Do not accept OAuth and refresh tokens as presence of the subscriber.
 * Allow users to terminate trust relationships with linked applications.
 * Use session tokens rather than static API secrets and keys.
 * Protect stateless session tokens with the following controls:
