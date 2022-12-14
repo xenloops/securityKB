@@ -2,9 +2,7 @@
 
 
 <details>
-  <summary>
-    Malicious Code: General
-  </summary>
+  <summary> General </summary>
 
 * Follow these high-level requirements:
   * Handle malicious activity securely and properly to not affect the rest of the application.
@@ -15,9 +13,7 @@
 </details>
 
 <details>
-  <summary>
-    Malicious Code: Code Integrity
-  </summary>
+  <summary> Code Integrity </summary>
   
 * Use a code analysis tool that can detect potentially malicious code.
 * Verify that the application does not ask for unnecessary or excessive permissions to privacy related features or sensors.
@@ -31,9 +27,7 @@
 </details>
 
 <details>
-  <summary>
-    Malicious Code: Application Deployment
-  </summary>
+  <summary> Application Deployment </summary>
   
 * If the application has an auto-update feature, obtain digitally signed updates over secure channels. 
 * Validate the digital signature of the update before installing or executing the update.
@@ -43,9 +37,7 @@
 </details>
 
 <details>
-  <summary>
-    Malicious Code: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application not to contain malicious capabilities in its source code and third-party libraries.
 * As a user, I want the application to have its source code and components analyzed for malicious capabilities before I use it.
