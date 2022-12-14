@@ -1,9 +1,7 @@
 # Data Protection
 
 <details>
-  <summary>
-    Data Protection: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure the following high-level requirements are met:
   * **Confidentiality**: Protect data from unauthorized observation or disclosure, both in transit and when stored.
@@ -19,9 +17,7 @@
 </details>
 
 <details>
-  <summary>
-    Data Protection: Client-Side
-  </summary>
+  <summary> Client-Side </summary>
   
 * Set sufficient anti-caching headers so that sensitive data is not cached in browsers.
 * Do not cache sensitive data in client-side storage.
@@ -29,9 +25,7 @@
 </details>
 
 <details>
-  <summary>
-    Data Protection: Sensitive and Private Data
-  </summary>
+  <summary> Sensitive and Private Data </summary>
   
 * Use the HTTP message body or headers to send sensitive data to the server.
 * Ensure query string parameters from any HTTP verb do not contain sensitive data.
@@ -45,9 +39,7 @@
 </details>
 
 <details>
-  <summary>
-    Data Protection: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to protect my sensitive data from being cached or temporary copies kept that may lead to exposure.
 * As a user, I want the application to make regular backups of my sensitive data for which recovery is tested regularly.
