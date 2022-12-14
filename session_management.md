@@ -1,9 +1,7 @@
 # Session Management
 
 <details>
-  <summary>
-    Session Management: General
-  </summary>
+  <summary> General </summary>
   
 * Ensure sessions are unique to each individual and cannot be guessed or shared.
 * Invalidate sessions when no longer required and time out during a period of inactivity.
@@ -12,9 +10,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Session Binding
-  </summary>
+  <summary> Session Binding </summary>
   
 * Generate a new session token upon user authentication.
 * Create session tokens using at least 64 bits of entropy.
@@ -23,9 +19,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Session Logout and Timeout
-  </summary>
+  <summary> Session Logout and Timeout </summary>
   
 * Invalidate the session token upon logout and expiration, such that the back button or a downstream relying party cannot resume an authenticated session
 * If allowing users to remain logged in, re-authenticate periodically both when actively used or after an idle period.
@@ -34,9 +28,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Tokens
-  </summary>
+  <summary> Tokens </summary>
   
 * Do not accept OAuth and refresh tokens as presense of the subscriber.
 * Allow users to terminate trust relationships with linked applications.
@@ -47,9 +39,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Cookies
-  </summary>
+  <summary> Cookies </summary>
   
 * On cookie-based session tokens:
   * Set the "Secure" attribute
@@ -60,9 +50,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Re-Authentication from a Federation or Assertion
-  </summary>
+  <summary> Re-Authentication from a Federation or Assertion </summary>
   
 * Relying parties (RP) must specify the maximum authentication time
 * Credential Service Providers (CSP) must re-auth a user if the session times out.
@@ -70,9 +58,7 @@
 </details>
 
 <details>
-  <summary>
-    Session Management: Example security user stories
-  </summary>
+  <summary> Example security user stories </summary>
   
 * As a user, I want the application to use session state to ensure my use is unique and protected.
 * As a user, I want the application to follow security best practices for session use, generation, management, and destruction.
