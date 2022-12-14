@@ -7,14 +7,12 @@ echo Decompress new zip archive (if exists)
 tar -xf securityKB-main.zip
 echo.
 echo Files being included:
-type securityKB-main\architecture.md >> combined.md
-
 type securityKB-main\security_principles.md >> combined.md
 type securityKB-main\architecture.md >> combined.md
 type securityKB-main\authentication.md >> combined.md
 type securityKB-main\access_control.md >> combined.md
 type securityKB-main\session_management.md >> combined.md
-type securityKB-main\input&output.md >> combined.md
+type securityKB-main\input_output.md >> combined.md
 type securityKB-main\tainted_input.md >> combined.md
 type securityKB-main\data_protection.md >> combined.md
 type securityKB-main\encrypted_communications.md >> combined.md
