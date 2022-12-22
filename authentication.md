@@ -1,7 +1,6 @@
 # Authentication
 
-Authentication establishes or confirms a user or component as authentic and that the claims made are correct, resistant to impersonation, 
-altercation, and interception.
+Authentication establishes or confirms a user or component as authentic and that the claims made are correct, resistant to impersonation, altercation, and interception.
 
 <details>
   <summary> Authoritative Sources </summary>
@@ -17,12 +16,11 @@ altercation, and interception.
 * **Memorized secrets** include passwords, PINs, patterns, image selections and passphrases. 
 * **One-time password (OTP)**: a secret used once to login, e.g. a code sent by SMS.
 * **Something you know**: a memorized secret required to authenticate.
-* **Something you have**: something you can hold, e.g. housekey, ATM card, Yubikey.
+* **Something you have**: something you can hold, e.g. house key, ATM card, employee badge.
 * **Something you are**: a biometric unique to a person, e.g. DNA, fingerprint, retina, voice, etc.
 * **Single factor**: Something required for authentication. Usually a passphrase or PIN.
 * **Second factor**: Something additional to a single factor required to authenticate.
-* **Multi-factor authentication (MFA)** Required use of more than one factor to authenticate. Examples include a PIN and key card,
-or passphrase and fingerprint. _Note:_ a password combined with a secret question does _not_ constitute MFA, since both are "things you know."
+* **Multi-factor authentication (MFA)** Required use of more than one factor to authenticate. Examples include a PIN and key card, or passphrase and fingerprint. _Note:_ a password combined with a secret question does _not_ constitute MFA, since both are "things you know."
 </details>
 
 <details>
@@ -36,14 +34,11 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
   * Restrict IP address ranges
   * CAPTCHAs
   * Protect against logins across multiple accounts from same IP
-* Use weak authenticators (e.g. SMS or email) only for secondary authentication or to approve transactions.
 * Send authentication detail changes to user's verified contact method, including:
   * Incorrect login attempt (only first time in a period, to avoid spamming users)
   * Password or other detail changes
   * Address or email/phone changes
   * Logins from new devices and IP addresses
-* Prefer push notifications to email/SMS.
-* Do not send sensitive information in notifications.
 * Use controls against phishing attacks, e.g.:
   * Multi-factor authentication
   * Client-side certificates
@@ -115,7 +110,8 @@ or passphrase and fingerprint. _Note:_ a password combined with a secret questio
   These are usually codes sent via another route than the standard authentication method, e.g. temporary code sent to a known email to verify the user that they then enter along with their login.
   
 * Use strong methods like mobile push, secure email, or another secure method for sending authentication codes.
-* Avoid SMS or PSTN; these are insecure and unencrypted.
+* Prefer push notifications to email, SMS, or PSTN, which are insecure. Use them only for secondary authentication or to approve transactions.
+* Do not send sensitive information in notifications.
 * Expire verifiers after a short time.
 * Expire verifiers after one use.
 * Secure the channel between the authenticator and verifier.
