@@ -7,7 +7,7 @@ Many vulnerabilities can be remediated where they begin -- in code.
   
   **Problem:** A SQL injection attack consists of insertion or "injection" of a SQL query via the input data from the client to the application. A successful SQL injection exploit can read sensitive data from the database, modify database data, execute administration operations on the database, recover the content of a given file present on the DBMS file system, and in some cases issue commands to the operating system. [OWASP](https://owasp.org/www-community/attacks/SQL_Injection)
 
-  **Solutions:** Use parameterized queries, use stored procedures, validate input, or escape tainted input. [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+  **Solutions:** Use parameterized queries, use stored procedures, validate input, or escape tainted input. [OWASP SQLi Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
 
   ### Choice 1: Prepared statements with parameterized queries
   
@@ -52,9 +52,34 @@ Many vulnerabilities can be remediated where they begin -- in code.
     // error handling
   }
   ```
-  
 </details>
 
+<details>
+  <summary> Cross-Site Scripting (XSS) </summary>
+  
+  **Problem:** XSS is a type of code injection in which malicious scripts are inserted into otherwise trusted websites. In an XSS attack an attacker uses a web application to send malicious code, generally in the form of a browser-side script, to a different user. [OWASP](https://owasp.org/www-community/attacks/xss)
+
+  **Solutions:** Use modern web frameworks, sanitize tainted input, encode output. [OWASP XSS Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+
+  ### Use modern web frameworks
+  
+  Modern frameworks encourage good security practices and help mitigate XSS by using defenses such as templating and auto-escaping. Developers still need to be aware of problems that can occur when using frameworks insecurely, and where gaps in their frameworks exist.
+  
+  ### Encode output
+  
+  Use output encoding to safely display user input as entered. Do not interpret variables as code. Use the framework's default output encoding protection. Note that output must be encoded for the context in which it appears, e.g.: 
+  
+  * HTML entities (convert & to ```&amp;```, < to ```&lt;```, > to ```&gt;```, " to ```&quot;```, ' to ```&#x27;```, and / to ```&#x2F;```)
+  * HTML attributes (replace all characters except alphanumeric with the HTML Entity ```&#xHEX;``` format, including spaces)
+  * URLs (use [standard percent encoding](https://www.w3schools.com/tags/ref_urlencode.asp) to encode only parameter values)
+  * JavaScript (replace all characters except alphanumeric characters with the \uXXXX [Unicode encoding format](https://www.unicode.org/charts))
+  * CSS (use the ```\XX``` or ```\XXXXXX``` formats to encode where needed)
+
+  ### Sanitize tainted input
+  
+  If a user absolutely needs to write HTML within the application (as for a WYSIWYG editor), use an HTML sanitization   utility such as [DOMPurify](https://github.com/cure53/DOMPurify), recommended by OWASP. Remember to sanitize _after_ making any changes to the input (or sending to a library that modifies it); this may invalidate the security effort.
+
+</details>
 
 
 <details>
