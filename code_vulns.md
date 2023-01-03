@@ -102,7 +102,8 @@ Many vulnerabilities can be remediated where they begin -- in code.
   **Solutions:** See the following recommendations. [OWASP CSRF Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
   * Use the framework's CSRF protections if it has any (many modern frameworks do).
-    * If it doesn't, add [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) to all state changing requests and validate them on the backend.
+    * If it doesn't, add [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) to all state changing requests.
+  * Reauthenticate for all sensitive actions on the backend.
   * For stateful software, use the [synchronizer token pattern](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#synchronizer-token-pattern).
   * For stateless software, use [double submit cookies](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie).
   * Avoid using GET requests for state-changing operations.
@@ -111,6 +112,10 @@ Many vulnerabilities can be remediated where they begin -- in code.
     * Implement [user interaction based protection](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#user-interaction-based-csrf-defense) for highly sensitive operations.
     * Use [custom request headers](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#use-of-custom-request-headers).
     * Verify the origin with [standard headers](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#verifying-origin-with-standard-headers).
+  
+  ### Tools
+  
+  * [OWASP CSRFGuard](https://owasp.org/www-project-csrfguard)
   
 </details>
   
