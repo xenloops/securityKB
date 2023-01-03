@@ -102,7 +102,8 @@ Many vulnerabilities can be remediated where they begin -- in code.
   **Solutions:** See the following recommendations. [OWASP CSRF Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
   * Use the framework's CSRF protections if it has any (many modern frameworks do).
-    * If it doesn't, add [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) to all state changing requests and validate them on the backend.
+    * If it doesn't, add [CSRF tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation) to all state changing requests.
+  * Reauthenticate for all sensitive actions on the backend.
   * For stateful software, use the [synchronizer token pattern](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#synchronizer-token-pattern).
   * For stateless software, use [double submit cookies](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie).
   * Avoid using GET requests for state-changing operations.
@@ -112,13 +113,61 @@ Many vulnerabilities can be remediated where they begin -- in code.
     * Use [custom request headers](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#use-of-custom-request-headers).
     * Verify the origin with [standard headers](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#verifying-origin-with-standard-headers).
   
+  ### Tools
+  
+  * [OWASP CSRFGuard](https://owasp.org/www-project-csrfguard)
+  
 </details>
   
+<details>
+  <summary> XML issues </summary>
+  
+  [XML External Entity (XXE)](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing) attacks can specify system references in applications that process XML, giving system access to an attacker.
+  
+  * Do not accept external references in XML. 
+  * Use minimal privileges in XML parsers.
+  * Use a secure, properly configured XML parser.
+  
+  XML Entity Expansion (XEE, a.k.a. "Billion LOLs" or "XML bomb") is a Denial Of Service (DoS) attack that uses valid and well-formed XML blocks that expand exponentially until it exhausts server resources.
+  
+  * Configure the XML parser so that it does not allow document type definition (DTD) custom entities as part of an incoming XML document.
+  * Set the "secure-processing" property for an XML factory, parser or reader.
+  * If inline DOCTYPE declaration is not needed, disable it:
+  ```
+  factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+  ```
+  
+  ### Tools
+  * [Apache Xerces XML parser](https://xerces.apache.org)
+  * [OWASP XML Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XML_Security_Cheat_Sheet.html)
+  
+</details>
 
 <details>
-  <summary> Authoritative sources </summary>
+  <summary> Resources </summary>
   
-* Java: [Secure Coding Guidelines for Java SE (Oracle)](https://www.oracle.com/java/technologies/javase/seccodeguide.html)
+  ### Technology Agnostic
+  * [OWASP Secure Coding Practices Quick Reference Guide](https://github.com/OWASP/secure-coding-practices-quick-reference-guide)
+  
+  ### Java
+  * [Secure Coding Guidelines for Java SE (Oracle)](https://www.oracle.com/java/technologies/javase/seccodeguide.html)
+  * [Java language specification (Oracle)](https://docs.oracle.com/javase/specs)
+  * [Java CWEs](https://cwe.mitre.org/data/definitions/660.html)
+  * [Oracle Secure Coding Standard for Java(SEI CERT)](https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java)
+  * J. Bloch, _Effective java_. Prentice-Hall, 2008. 
+  * J. Bloch and N. Gafter, _Java puzzlers: traps, pitfalls, and corner cases_. Addison-Wesley, 2012. 
+  
+  ### .NET
+  * [Secure coding guidelines (Microsoft)](https://learn.microsoft.com/en-us/dotnet/standard/security/secure-coding-guidelines)
+  
+  ### JavaScript
+  * [JavaScript Web Application Secure Coding Practices (Checkmarx)](https://github.com/Checkmarx/JS-SCP)
+  
+  ### Python
+  
+  ### C/C++
+  * [SEI CERT C Coding Standard: https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard
+  * [SEI CERT C++ Coding Standard: https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682
   
 </details>
   
