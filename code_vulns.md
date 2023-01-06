@@ -142,6 +142,14 @@ Many vulnerabilities can be remediated where they begin -- in code.
   * [OWASP XML Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XML_Security_Cheat_Sheet.html)
   
 </details>
+  
+<details>
+  <summary> Buffer overflow </summary>
+  
+  Many native languages do not inherently check bounds on variable size or memory manipulation functions. This can provide an avenue of attack to inject arbitrary code or corrupt data. [OWASP](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)
+  In a classic buffer overflow exploit, an attacker sends data to a program, which it stores in an undersized memory buffer. The result is that information on the call stack is overwritten, including the function's return pointer. The data sets the value of the return pointer so that when the function returns, it transfers control to malicious code contained in the attacker’s data (also see the [shellcode Wikipedia article](https://en.wikipedia.org/wiki/Shellcode)).
+
+</details>
 
 <details>
   <summary> Resources </summary>
@@ -171,3 +179,8 @@ Many vulnerabilities can be remediated where they begin -- in code.
   
 </details>
   
+<details>
+  <summary>  </summary>
+
+</details>
+
