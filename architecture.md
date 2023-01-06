@@ -79,18 +79,6 @@
 </details>
 
 <details>
-  <summary> Data Protection </summary>
-  
-* Categorize all data processed, transmitted, or stored properly.
-* Protect sensitive data in transit and at rest as appropriate.
-* Apply each data category's protection requirements in the architecture, including:
-  * Encryption
-  * Integrity
-  * Confidentiality
-  * Secure retention
-</details>
-
-<details>
   <summary> Communications </summary>
   
 * Encrypt communication channels between components.
