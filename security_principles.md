@@ -1,5 +1,9 @@
 # General principles
 
+* Educate all users on security best practices and the organization's security policies, as appropriate to their job duties.
+  * Avoid overwhelming users with too many communications or trainings. 
+  * Keep trainings short and specific to an issue (e.g. 5-10 minute read/video on SQL Injection). 
+  * Make the training materials searchable (e.g. if creating videos, publish their transcripts as well).
 * Simplicity 1: If a security feature is too inconvenient or complex to set up, users will opt for the default or a less strict configuration.
 * Simplicity 2: Limit the attack surface by disabling any functionality, account, process, system, etc. that is not needed. Better yet, don't install it in the first place (e.g. do not install web, FTP, or Telnet services on employee laptops, and do not install web browsers on servers).
 * Least privilege: Permit legitimate users of a system the minimal set of privileges they need to access the functions or information allowed them (e.g. if a user's job requires them to access sensitive customer information, deny their ability to print or save files or take screenshots). [OWASP](https://owasp.org/www-community/Access_Control)
