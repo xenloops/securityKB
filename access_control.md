@@ -27,6 +27,13 @@ Authorization is allowing access to resources to only those permitted to use the
 * Use a strong anti-CSRF mechanism (preferably built into the framework) to protect authenticated functionality.
 </details>
 
+
+<details>
+  <summary> Privileged Access </summary>
+  
+* Grant temporary permissions to perform privileged tasks. This prevents unauthorized users from gaining access after elevated permissions have expired. Grant access only when users need it, for as short a duration as necessary.
+</details>
+
 <details>
   <summary> Example security user stories </summary>
   
