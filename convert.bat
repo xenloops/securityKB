@@ -17,7 +17,8 @@ type securityKB-main\tainted_input.md >> combined.md
 type securityKB-main\data_protection.md >> combined.md
 type securityKB-main\encrypted_communications.md >> combined.md
 type securityKB-main\cryptographic_storage.md >> combined.md
-type securityKB-main\api_web_services.md >> combined.md
+type securityKB-main\web_services.md >> combined.md
+type securityKB-main\api.md >> combined.md
 type securityKB-main\business_logic.md >> combined.md
 type securityKB-main\configuration.md >> combined.md
 type securityKB-main\error_logging.md >> combined.md
