@@ -1,11 +1,10 @@
-# API and Web Services
+# Web Services
 
 <details>
   <summary> General </summary>
   
 * Ensure that adequate authentication, session management, and authorization of all web services are in place.
 * Validate all parameters that transit from a lower to higher trust level.
-* Design in effective security controls for all API types, including cloud and serverless APIs.
 </details>
 
 <details>
