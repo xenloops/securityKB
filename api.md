@@ -13,7 +13,12 @@
   
 From the [OWASP 2023 Top 10 API Security Risks](https://owasp.org/API-Security/editions/2023/en/0x11-t10/)
 
-1. **Broken Object Level Authorization** (BOLA): APIs tend to expose endpoints that handle object identifiers, creating a wide attack surface of Object Level Access Control issues. Consider using object level authorization checks in every function that accesses a data source using an ID from the user.
+1. **Broken Object Level Authorization** (BOLA): APIs tend to expose endpoints that handle object identifiers, creating a wide attack surface of Object Level Access Control issues. Failures in this mechanism typically lead to unauthorized information disclosure, modification, or destruction of data.
+To prevent:
+   * Implement a proper authorization mechanism that relies on the user policies and hierarchy.
+   * Use the authorization mechanism to check if the logged-in user has access to perform the requested action on the record in every function that uses an input from the client to access a record in the database.
+   * Prefer the use of random and unpredictable values as GUIDs for record IDs.
+   * Write tests to evaluate the vulnerability of the authorization mechanism. Do not deploy changes that fail the tests.
 2. **Broken Authentication**: Authentication mechanisms are often implemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to assume another user's identity. Compromising authentication integrity  compromises API security overall.
 3. **Broken Object Property Level Authorization**: The lack of or improper authorization validation at the object property level leads to information exposure or manipulation by unauthorized parties. This is the root cause of other API risks, such as Excessive Data Exposure and Mass Assignment.
 4. **Unrestricted Resource Consumption**: Satisfying API requests requires resources such as network bandwidth, CPU, memory, and storage. Other resources such as emails/SMS/phone calls or biometrics validation are made available by service providers via API integrations, and paid for per request. Successful attacks can lead to a denial of service and increased operational costs.
@@ -26,6 +31,13 @@ From the [OWASP 2023 Top 10 API Security Risks](https://owasp.org/API-Security/e
 
 </details>
 
+<details>
+  <summary> Best practices </summary>
+
+</details>
+* Use object level authorization checks in every function that accesses a data source using an ID from the user to validate that the logged-in user has permission to perform the requested action on the requested object. Comparing the user ID of the current session (e.g. by extracting it from the JWT token) with the vulnerable ID parameter isn't sufficient; this approach could address only a small subset of cases, and it is by design that the user will have access to the vulnerable API endpoint/function. The violation happens at the object level, by manipulating the ID. 
+* 
+  
 
 
 
