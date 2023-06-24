@@ -22,4 +22,4 @@ This is a repo into which I'm dumping things that help with application security
 * [Standards](standards.md)
 * [Resources](resources.md)
 
-
+See [convert.bat](convert.bat) to turn this into an editable, formattable document that you can put your name and logo on and claim as your own research, ya leech!
