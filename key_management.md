@@ -74,47 +74,51 @@ Strong cryptographic systems can be compromised by lax and inappropriate human a
 
 ### Key Compromise and Recovery
 
-The compromise of a key has the following implications:
+Key compromise has the following implications:
 
-    In general, the unauthorized disclosure of a key used to provide confidentiality protection (i.e., via encryption) means that all information encrypted by that key could be exposed or known by unauthorized entities. The disclosure of a Certificate of Authorities's private signature key means that an adversary can create fraudulent certificates and Certificate Revocation Lists (CRLs).
-    A compromise of the integrity of a key means that the key is incorrect - either that the key has been modified (either deliberately or accidentally), or that another key has been substituted; this includes a deletion (non-availability) of the key. The substitution or modification of a key used to provide integrity calls into question the integrity of all information protected by the key. This information could have been provided by, or changed by, an unauthorized entity that knows the key. The substitution of a public or secret key that will be used (at a later time) to encrypt data could allow an unauthorized entity (who knows the decryption key) to decrypt data that was encrypted using the encryption key.
-    A compromise of a key's usage or application association means that the key could be used for the wrong purpose (e.g., for key establishment instead of digital signatures) or for the wrong application, and could result in the compromise of information protected by the key.
-    A compromise of a key's association with the owner or other entity means that the identity of the other entity cannot be assured (i.e., one does not know who the other entity really is) or that information cannot be processed correctly (e.g., decrypted with the correct key).
-    A compromise of a key's association with other information means that there is no association at all, or the association is with the wrong "information". This could cause the cryptographic services to fail, information to be lost, or the security of the information to be compromised. Certain protective measures may be taken in order to minimize the likelihood or consequences of a key compromise. Similar affect as ransomware, except that you can't pay the ransom and get the key back.
+   * The unauthorized disclosure of a key used to provide confidentiality means that all information encrypted by that key will be exposed to unauthorized entities.
+   * The disclosure of a Certificate Authorities's private signature key means that an adversary can create fraudulent certificates and Certificate Revocation Lists (CRLs).
+   * The compromise of key integrity means that the key is incorrect -- either that the key has been modified (either deliberately or accidentally) or that another key has been substituted. The substitution or modification of a key used to provide integrity calls into question the integrity of all information protected by the key. This information could have been provided by, or changed by, an unauthorized entity that knows the key. The substitution of a public or secret key that will be used (at a later time) to encrypt data could allow an unauthorized entity (who knows the decryption key) to decrypt data that was encrypted using the encryption key.
+   * A compromise of a key's usage or application association means that the key could be used for the wrong purpose (e.g., for key establishment instead of digital signatures) or for the wrong application, and could result in the compromise of information protected by the key.
+   * A compromise of a key's association with the owner or other entity means that the identity of the other entity cannot be assured (i.e., one does not know who the other entity really is) or that information cannot be processed correctly (e.g., decrypted with the correct key).
+   * A compromise of a key's association with other information means that there is no association at all, or the association is with the wrong "information". This could cause the cryptographic services to fail, information to be lost, or the security of the information to be compromised.
 
 The following procedures are usually involved:
 
-    Limiting the amount of time a symmetric or private key is in plaintext form.
-    Preventing humans from viewing plaintext symmetric and private keys.
-    Restricting plaintext symmetric and private keys to physically protected containers. This includes key generators, key-transport devices, key loaders, cryptographic modules, and key-storage devices.
-    Using integrity checks to ensure that the integrity of a key or its association with other data has not been compromised. For example, keys may be wrapped (i.e., encrypted) in such a manner that unauthorized modifications to the wrapping or to the associations will be detected.
-    Employing key confirmation (see NIST SP 800-57 Part 1 Section 4.2.5.5) to help ensure that the proper key was, in fact, established.
-    Establishing an accountability system that keeps track of each access to symmetric and private keys in plaintext form.
-    Providing a cryptographic integrity check on the key (e.g., using a MAC or a digital signature).
-    The use of trusted timestamps for signed data. i. Destroying keys as soon as they are no longer needed.
-    Creating a compromise-recovery plan, especially in the case of a CA compromise.
+   * Limit the time a symmetric or private key is in plaintext form.
+   * Prevent humans from viewing plaintext symmetric and private keys.
+   * Restrict plaintext symmetric and private keys to physically protected containers. This includes key generators, key-transport devices, key loaders, cryptographic modules, and key-storage devices.
+   * Use integrity checks to ensure that the integrity of a key or its association with other data has not been compromised. For example, wrap keys (i.e., encrypt them) in such a manner that unauthorized modifications to the wrapping or to the associations will be detected.
+   * Employ key confirmation (see NIST SP 800-57 Part 1 Section 4.2.5.5) to help ensure that the proper key was, in fact, established.
+   * Establish an accountability system that keeps track of each access to symmetric and private keys in plaintext form.
+   * Provide a cryptographic integrity check on the key (e.g., using a MAC or a digital signature).
+   * Use trusted timestamps for signed data. Destroy keys as soon as they are no longer needed.
+   * Create a compromise-recovery plan, especially in the case of a CA compromise.
 
-A compromise-recovery plan is essential for restoring cryptographic security services in the event of a key compromise. A compromise-recovery plan shall be documented and easily accessible.
+#### Compromise-recovery plan
 
-The compromise-recovery plan should contain:
+A compromise-recovery plan is essential for restoring cryptographic security services in the event of a key compromise. A Document the compromise-recovery plan and make it easily accessible. The compromise-recovery plan should contain:
 
-    The identification and contact info of the personnel to notify.
-    The identification and contact info of the personnel to perform the recovery actions.
-    The re-key method.
-    An inventory of all cryptographic keys and their use (e.g., the location of all certificates in a system).
-    The education of all appropriate personnel on the recovery procedures.
-    An identification and contact info of all personnel needed to support the recovery procedures.
-    Policies that key-revocation checking be enforced (to minimize the effect of a compromise).
-    The monitoring of the re-keying operations (to ensure that all required operations are performed for all affected keys).
-    Any other recovery procedures, which may include:
-        Physical inspection of the equipment.
-        Identification of all information that may be compromised as a result of the incident.
-        Identification of all signatures that may be invalid, due to the compromise of a signing key.
-        Distribution of new keying material, if required.
+   * The identification and contact info of the personnel to notify.
+   * The identification and contact info of the personnel to perform the recovery actions.
+   * The re-key method.
+   * An inventory of all cryptographic keys and their use (e.g., the location of all certificates in a system).
+   * The education of all appropriate personnel on the recovery procedures.
+   * An identification and contact info of all personnel needed to support the recovery procedures.
+   * Policies that key-revocation checking be enforced (to minimize the effect of a compromise).
+   * The monitoring of the re-keying operations (to ensure that all required operations are performed for all affected keys).
+   * Any other recovery procedures, which may include:
+       * Physical inspection of the equipment.
+       * Identification of all information that may be compromised as a result of the incident.
+       * Identification of all signatures that may be invalid, due to the compromise of a signing key.
+       * Distribution of new keying material, if required.
 
-Trust Stores¶
+</details>
 
-    Design controls to secure the trust store against injection of third-party root certificates. The access controls are managed and enforced on an entity and application basis.
+
+### Trust Stores
+
+Design controls to secure the trust store against injection of third-party root certificates. The access controls are managed and enforced on an entity and application basis.
     Implement integrity controls on objects stored in the trust store.
     Do not allow for export of keys held within the trust store without authentication and authorization.
     Setup strict policies and procedures for exporting key material from applications to network applications and other components.
@@ -126,7 +130,6 @@ Use only reputable crypto libraries that are well maintained and updated, as wel
 
    * 
 
-</details>
 
 
 <details>
