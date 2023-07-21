@@ -307,35 +307,21 @@ Reviewed 7 July 2023
 
 Public Key Infrastructure (PKI) is a framework of policies, procedures, hardware, software, and standards used to manage digital certificates and encryption keys. Following these best practices is essential for ensuring the security and effectiveness of PKI implementations:
 
-    Use Strong Cryptography: Choose strong cryptographic algorithms, key lengths, and encryption methods. Keep up to date with the latest security standards and avoid using deprecated or weak algorithms.
-
-    Secure Key Management: Properly manage private keys to prevent unauthorized access. Use Hardware Security Modules (HSMs) or other secure key storage methods to protect private keys from theft or tampering.
-
-    Certificate Lifecycle Management: Implement a well-defined certificate lifecycle management process, including issuance, renewal, and revocation. Regularly audit certificates and remove expired or unused certificates.
-
-    Authentication and Authorization: Utilize certificates for strong authentication and authorization purposes. Ensure that only authorized individuals have access to private keys and sensitive operations.
-
-    Certificate Revocation: Maintain an updated Certificate Revocation List (CRL) or use Online Certificate Status Protocol (OCSP) for real-time certificate validation. Promptly revoke compromised or compromised private keys.
-
-    Secure Communication: Use secure communication channels when transmitting certificate requests, revocation information, and other sensitive data. Implement encryption and secure protocols such as HTTPS and TLS.
-
-    Separation of Duties: Distribute PKI administrative tasks among different individuals or roles to prevent unauthorized control over the entire infrastructure.
-
-    Backup and Recovery: Regularly back up the PKI components, including keys, certificates, and configuration data. Ensure that there is a reliable recovery plan in place in case of system failure or data loss.
-
-    Secure Hardware and Software: Keep the PKI infrastructure's hardware and software up to date with the latest security patches and firmware updates to prevent vulnerabilities.
-
-    Monitoring and Logging: Implement comprehensive monitoring and logging for all PKI-related activities and events. This helps detect suspicious behavior and facilitates auditing and incident response.
-
-    Physical Security: Ensure that physical access to PKI components, especially HSMs and root CA servers, is restricted and protected against unauthorized access.
-
-    Root CA Protection: Protect the root CA with extreme care, as it forms the foundation of the entire PKI. Store the root CA offline or in a highly secure environment.
-
-    Regular Audits and Reviews: Conduct regular security audits and reviews of the PKI infrastructure to identify potential weaknesses or vulnerabilities.
-
-    Compliance with Standards: Ensure that your PKI complies with relevant industry standards and regulations (e.g., X.509, RFC 5280, etc.).
-
-    Education and Training: Train employees and administrators on PKI best practices, security protocols, and the importance of protecting private keys.
+* Use Strong Cryptography: Choose strong cryptographic algorithms, key lengths, and encryption methods. Keep up to date with the latest security standards and avoid using deprecated or weak algorithms
+* Secure Key Management: Properly manage private keys to prevent unauthorized access. Use Hardware Security Modules (HSMs) or other secure key storage methods to protect private keys from theft or tampering.
+* Certificate Lifecycle Management: Implement a well-defined certificate lifecycle management process, including issuance, renewal, and revocation. Regularly audit certificates and remove expired or unused certificates.
+* Authentication and Authorization: Utilize certificates for strong authentication and authorization purposes. Ensure that only authorized individuals have access to private keys and sensitive operations.
+* Certificate Revocation: Maintain an updated Certificate Revocation List (CRL) or use Online Certificate Status Protocol (OCSP) for real-time certificate validation. Promptly revoke compromised or compromised private keys.
+* Secure Communication: Use secure communication channels when transmitting certificate requests, revocation information, and other sensitive data. Implement encryption and secure protocols such as HTTPS and TLS.
+* Separation of Duties: Distribute PKI administrative tasks among different individuals or roles to prevent unauthorized control over the entire infrastructure.
+* Backup and Recovery: Regularly back up the PKI components, including keys, certificates, and configuration data. Ensure that there is a reliable recovery plan in place in case of system failure or data loss.
+* Secure Hardware and Software: Keep the PKI infrastructure's hardware and software up to date with the latest security patches and firmware updates to prevent vulnerabilities.
+* Monitoring and Logging: Implement comprehensive monitoring and logging for all PKI-related activities and events. This helps detect suspicious behavior and facilitates auditing and incident response.
+* Physical Security: Ensure that physical access to PKI components, especially HSMs and root CA servers, is restricted and protected against unauthorized access.
+* Root CA Protection: Protect the root CA with extreme care, as it forms the foundation of the entire PKI. Store the root CA offline or in a highly secure environment.
+* Regular Audits and Reviews: Conduct regular security audits and reviews of the PKI infrastructure to identify potential weaknesses or vulnerabilities.
+* Compliance with Standards: Ensure that your PKI complies with relevant industry standards and regulations (e.g., X.509, RFC 5280, etc.).
+* Education and Training: Train employees and administrators on PKI best practices, security protocols, and the importance of protecting private keys.
 
 By adhering to these best practices, organizations can establish a robust and secure PKI infrastructure that enables secure digital communication, authentication, and data protection.
 
