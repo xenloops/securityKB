@@ -153,40 +153,74 @@ See the [OWASP Cross-Site Request Forgery Prevention Cheat Sheet](https://cheats
 </details>
 
 <details>
-  <summary>  </summary>
+  <summary> A07 Identification and Authentication Failures </summary>
+
+* Use [ASP.NET Core Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-2.2&), which is well configured by default
+* Use secure salted password hashes
+* Set a secure password policy 
+* Set a secure cookie policy (e.g. ```HttpOnly```, expiration)
 
 </details>
 
 <details>
-  <summary>  </summary>
+  <summary> A08 Software and Data Integrity Failures </summary>
+
+* Digitally sign assemblies and executable files
+* Use Nuget package signing
+* Review code and configuration changes to avoid malicious code or dependencies being introduced
+* Perform integrity checks or validate digital signatures on serialized objects received from the network
+* Use .NET in-box serializers that can handle untrusted data safely, e.g.:
+  * ```XmlSerializer``` and ```DataContractSerializer``` to serialize object graphs into and from XML (***not*** ```NetDataContractSerializer```)
+  * ```BinaryReader``` and ```BinaryWriter``` for XML and JSON
+  * ```System.Text.Json``` APIs to serialize object graphs into JSON
+
+## Anti-patterns
+
+**Do not:**
+* Send unsigned or unencrypted serialized objects over the network
+* Use the ```BinaryFormatter``` type for data processing
 
 </details>
 
 <details>
-  <summary>  </summary>
+  <summary> A09 Security Logging and Monitoring Failures </summary>
+
+* Log all login, access control, and server-side input validation failures with sufficient user context to identify suspicious or malicious accounts
+* Establish effective monitoring and alerting
+* Log the stack trace, error message, and user ID that caused the error
+* See the [OWASP Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
+* Use [Application Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core) to add monitoring capabilities
+
+## Anti-patterns
+
+**Do not:**
+
+* Log sensitive data (e.g. passwords)
+* Log generic error messages (e.g. ```Log.Error("Error was thrown");```)
 
 </details>
-
-
-
-
 
 <details>
-  <summary>  </summary>
+  <summary> A10 Server-Side Request Forgery (SSRF) </summary>
+
+* Validate and sanitize all user-controlled input before using it in a request
+* Use an allowlist of allowed protocols and domains
+* Use ```IPAddress.TryParse()``` and ```Uri.CheckHostName()``` to check IP addresses and domain names
+* See the [OWASP Server-Side Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)
+
+
+## Anti-patterns
+
+**Do not:**
+
+* Follow HTTP redirects
+* Forward raw HTTP responses to the user
+
 
 </details>
 
 
 
-
-
-
-
-
-
-
-
-
-## Sources 
+## Sources
 
 * [OWASP DotNet Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html)
