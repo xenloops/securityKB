@@ -39,6 +39,33 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
 
 
 
+<details>
+  <summary> A02 Cryptographic Failures </summary>
+
+* Use a strong hashing algorithm such as AES-512:
+  * General hashing: ```System.Security.Cryptography.SHA512```
+  * Password hashing: ```Microsoft.AspNetCore.Cryptography.KeyDerivation.Pbkdf2```
+* When hashing non-unique inputs such as passwords, salt the value before hashing
+* 
+* Make sure the application easily supports a future change of cryptographic algorithms
+
+Anti-patterns
+
+* Never, ever write your own cryptographic functions
+* Where possible, avoid writing any cryptographic code -- instead use pre-existing secrets management solutions
+* If that's not possible, use a trusted and well-known library rather than using those built into .NET (it's easy to make cryptographic errors with them)
+* 
+
+</details>
+
+
+
+
+<details>
+  <summary>  </summary>
+
+</details>
+
 
 
 
