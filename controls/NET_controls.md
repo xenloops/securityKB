@@ -13,6 +13,17 @@ Get notified of security issues by Watching the following Announcement repos (Wa
 * [.NET Core Security Announcements](https://github.com/dotnet/announcements)
 * [ASP.NET Core & Entity Framework Core Security Announcements](https://github.com/aspnet/Announcements)
 
+## General .NET security controls
+
+* Type-safe code prevents arbitrary memory access
+* 
+
+### Anti-patterns
+
+**Do not:**
+* Use Code Access Security (CAS), which is deprecated
+* 
+
 ## .NET controls for the OWASP Top 10
 
 This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html) for example code.
@@ -159,6 +170,8 @@ See the [OWASP Cross-Site Request Forgery Prevention Cheat Sheet](https://cheats
 * Use secure salted password hashes
 * Set a secure password policy 
 * Set a secure cookie policy (e.g. ```HttpOnly```, expiration)
+* Use ```WindowsPrincipal.IsInRole()``` to authenticate a user for specific roles
+* 
 
 </details>
 
@@ -224,3 +237,6 @@ See the [OWASP Cross-Site Request Forgery Prevention Cheat Sheet](https://cheats
 ## Sources
 
 * [OWASP DotNet Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html)
+* [.NET Key Security Concepts](https://learn.microsoft.com/en-us/dotnet/standard/security/key-security-concepts)
+* [.NET Role-Based Security](https://learn.microsoft.com/en-us/dotnet/standard/security/role-based-security)
+* 
