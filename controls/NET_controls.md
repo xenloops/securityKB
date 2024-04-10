@@ -20,9 +20,34 @@ Get notified of security issues by Watching the following Announcement repos (Wa
 
 ### Anti-patterns
 
-**Do not:**
-* Use Code Access Security (CAS), which is deprecated
+**Do not use:**
+* Code Access Security (CAS), which is deprecated
+* Partially trusted code
+* The [```AllowPartiallyTrustedCaller```](https://learn.microsoft.com/en-us/dotnet/api/system.security.allowpartiallytrustedcallersattribute) attribute (APTCA)
+* .NET Remoting
+* Distributed Component Object Model (DCOM)
+* Binary formatters
+
+## Managed wrapper code
+
+If functionality implemented in native code is made available to managed code:
+
+* Wrapper callers must have unmanaged code rights
+* Code downloaded from over a network won't work with the wrappers by default
+* Give unmanaged code rights only to the wrapper code and assert the rights
+* If resources are exposed by the wrapper:
+  * First demand the permission appropriate to the resource
+  * Then assert its rights to perform the actual operation
+  * Carefully verify the safety of the native code and any data shared
+
+## Race conditions
+
+* If a class's ```Dispose()``` method is not synchronized, cleanup code inside ```Dispose()``` can run more than once
 * 
+
+thread safety
+
+
 
 ## .NET controls for the OWASP Top 10
 
@@ -55,6 +80,13 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
   <summary> A02 Cryptographic Failures </summary>
 
 ## General encryption
+* .NET implements many cryptographic algorithms in ```system.security.cryptography.*```:
+  * Algorithm type abstract classes such as [```SymmetricAlgorithm```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.symmetricalgorithm), [```AsymmetricAlgorithm```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.asymmetricalgorithm), and [```HashAlgorithm```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hashalgorithm)
+  * Algorithm abstract classes that inherit from type classes (e.g. [```Aes```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.aes), [```RSA```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.rsa), and [```ECDiffieHellman```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.ecdiffiehellman))
+  * Implementation classes that inherit from the above (e.g. [```AesManaged```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.aesmanaged), [```RC2CryptoServiceProvider```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.rc2cryptoserviceprovider), and [```ECDiffieHellmanCng```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.ecdiffiehellmancng))
+* Simpler (though less flexible) one-shot APIs exist starting with .NET 5:
+  * Static ```HashData``` methods such as [```SHA256.HashData```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha256.hashdata)
+  * The [```RandomNumberGenerator```](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator) class offers static methods for generating cryptographically random data
 * Use a strong hashing algorithm such as AES-512:
   * General hashing: ```System.Security.Cryptography.SHA512```
   * Password hashing: ```Microsoft.AspNetCore.Cryptography.KeyDerivation.Pbkdf2```
@@ -66,11 +98,31 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
 * Make sure the application easily supports a future change of cryptographic algorithms
 * Have a cryptography expert review design and code, as even the most trivial error can severely weaken encryption
 
+## Recommended algorithms
+
+* Data privacy
+  * [Aes](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.aes)
+* Data integrity
+  * [HMACSHA256](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hmacsha256)
+  * [HMACSHA512](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.hmacsha512)
+* Digital signature
+  * [ECDsa](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.ecdsa)
+  * [RSA](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.rsa)
+* Key exchange
+  * [ECDiffieHellman](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator.getbytes)
+  * [RSA](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.rsa)
+* Random number generation
+  * [RandomNumberGenerator.GetBytes](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator.getbytes)
+  * [RandomNumberGenerator.Fill](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator.fill)
+* Generating a key from a password
+  * [Rfc2898DeriveBytes.Pbkdf2](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.rfc2898derivebytes.pbkdf2)
+
 ## Anti-patterns
 
 **Do not:**
 * Write custom cryptographic functions
-* Write any cryptographic code if possible -- instead use pre-existing secrets management solutions. If that's not possible, use a trusted and well-known library rather than using .NET built-ins (it's easy to make cryptographic errors with them)
+* Write any cryptographic code if possible -- instead use pre-existing secrets management solutions. If that's not possible, use a trusted and well-tested library
+* If using .NET built-ins, follow the documentation carefully (it's easy to make cryptographic errors)
 
 ## Encryption at rest (local storage)
 
@@ -171,7 +223,7 @@ See the [OWASP Cross-Site Request Forgery Prevention Cheat Sheet](https://cheats
 * Set a secure password policy 
 * Set a secure cookie policy (e.g. ```HttpOnly```, expiration)
 * Use ```WindowsPrincipal.IsInRole()``` to authenticate a user for specific roles
-* 
+* For role-based authentication (RBAC), use the ```System.Security.Permissions.PrincipalPermission``` class to perform authorization in a similar way to code access checks
 
 </details>
 
@@ -239,4 +291,5 @@ See the [OWASP Cross-Site Request Forgery Prevention Cheat Sheet](https://cheats
 * [OWASP DotNet Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DotNet_Security_Cheat_Sheet.html)
 * [.NET Key Security Concepts](https://learn.microsoft.com/en-us/dotnet/standard/security/key-security-concepts)
 * [.NET Role-Based Security](https://learn.microsoft.com/en-us/dotnet/standard/security/role-based-security)
-* 
+* [.NET cryptography model](https://learn.microsoft.com/en-us/dotnet/standard/security/cryptography-model)
+* [.NET Secure coding guidelines](https://learn.microsoft.com/en-us/dotnet/standard/security/secure-coding-guidelines)
