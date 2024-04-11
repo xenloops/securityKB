@@ -42,11 +42,13 @@ If functionality implemented in native code is made available to managed code:
 
 ## Race conditions
 
-* If a class's ```Dispose()``` method is not synchronized, cleanup code inside ```Dispose()``` can run more than once
-* 
+Be sure to review your code to make sure there are no security issues due to:
+* In a class's ```Dispose()``` method, cleanup code inside ```Dispose()``` can run more than once
+* Other threads may access class members before their class constructors have completely run
+* Code that caches security information
+* An object that references a static or unmanaged resource that it then frees in its finalizer
 
-thread safety
-
+In all these cases, synchronizing should solve the issues.
 
 
 ## .NET controls for the OWASP Top 10
