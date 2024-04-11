@@ -43,7 +43,7 @@ If functionality implemented in native code is made available to managed code:
 ## Race conditions
 
 Be sure to review your code to make sure there are no security issues due to:
-* In a class's ```Dispose()``` method, cleanup code inside ```Dispose()``` can run more than once
+* Cleanup code inside ```Dispose()``` running more than once in a class's ```Dispose()``` method
 * Other threads may access class members before their class constructors have completely run
 * Code that caches security information
 * An object that references a static or unmanaged resource that it then frees in its finalizer
@@ -62,7 +62,7 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
 * Set ```ExpireTimeSpan``` to a reasonable session timeout (check for company policy value)
 * Set ```SlidingExpiration``` to ```false```
 * Set the ```requireSSL``` flag in the config transforms to only send encrypted cookies
-* Throttle requests using ```AllowXRequestsEveryXSecondsAttribute``` to thwart brute force attacks during these procdedures:
+* Throttle requests using ```AllowXRequestsEveryXSecondsAttribute``` to thwart brute force attacks during these procedures:
   * User registration
   * Logon
   * Password reset
@@ -94,7 +94,7 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
   * Password hashing: ```Microsoft.AspNetCore.Cryptography.KeyDerivation.Pbkdf2```
 * When hashing non-unique inputs such as passwords, salt the value before hashing
 * Protect encryption keys more than any other asset (see the [OWASP Key Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html#storage))
-* Use TLS 1.2 or later for an entire web site (se the [OWASP Transport Layer Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html))
+* Use TLS 1.2 or later for an entire web site (see the [OWASP Transport Layer Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html))
 * Check a web site's configuration using [SSL Test](https://www.ssllabs.com/ssltest/) or [TestSSL](https://testssl.sh/)
 * Ensure headers do not disclose information about the web app
 * Make sure the application easily supports a future change of cryptographic algorithms
@@ -147,7 +147,7 @@ This is a summary. See the [source](https://cheatsheetseries.owasp.org/cheatshee
 
 **Do not:**
 * Concatenate strings anywhere and execute them against the database (known as dynamic SQL)
-* It is possible to accidentally write dynamic SQL with ORMs or stored procedures, so check everything
+* Accidentally write dynamic SQL with ORMs or stored procedures; always verify these
 * Connect to the database using the database administrator account
 
 ## OS Injection
