@@ -90,5 +90,4 @@ Some useful resources for securely administering databases:
   * [C8: Protect Data Everywhere](https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere.html) - [Microsoft article for SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/encryption/sql-server-encryption)
   * [C9: Implement Security Logging and Monitoring](https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html) - [Microsoft article for SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-database-engine)
 * [Microsoft: SQL Server security best practices](https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-server-security-best-practices?view=sql-server-ver16)
-
- 
+* [Microsoft: Securing SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/securing-sql-server) 
