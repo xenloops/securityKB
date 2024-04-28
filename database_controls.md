@@ -54,7 +54,7 @@
 
 </details>
 
-
+<br>
 
 Database security is essential to the confidentiality, integrity, and availability of data. Understanding the fundamentals of securing databases is crucial to protect sensitive information and mitigate potential risks effectively. The main security controls protecting data are:
 
