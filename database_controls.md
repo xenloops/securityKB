@@ -26,13 +26,11 @@ Some useful resources for securely administering databases:
 
 * [OWASP Database Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Database_Security_Cheat_Sheet.html#database-configuration-and-hardening)
 * OWASP Proactive Controls:
-  * [C3: Secure Database Access](https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database)
+  * [C3: Secure Database Access](https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database) - [Microsoft article for SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)
   * [C6: Implement Digital Identity](https://owasp.org/www-project-proactive-controls/v3/en/c6-digital-identity.html)
-  * [C7: Enforce Access Controls](https://owasp.org/www-project-proactive-controls/v3/en/c7-enforce-access-controls.html)
-  * [C8: Protect Data Everywhere](https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere.html)
-  * [C9: Implement Security Logging and Monitoring](https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html)
-* []()
-* []()
-* []()
-* []()
+  * [C7: Enforce Access Controls](https://owasp.org/www-project-proactive-controls/v3/en/c7-enforce-access-controls.html) - Microsoft articles for SQL Server: [Getting started](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions) - [Effective permissions](https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/determining-effective-database-engine-permissions) - [SQL Server 2017 permissions (PDF)](https://raw.githubusercontent.com/Microsoft/sql-server-samples/master/samples/features/security/permissions-posters/Microsoft_SQL_Server_2017_and_Azure_SQL_Database_permissions_infographic.pdf)
+  * [C8: Protect Data Everywhere](https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere.html) - [Microsoft article for SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/encryption/sql-server-encryption)
+  * [C9: Implement Security Logging and Monitoring](https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html) - [Microsoft article for SQL Server](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-database-engine)
+* [Microsoft: SQL Server security best practices](https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-server-security-best-practices?view=sql-server-ver16)
+
  
