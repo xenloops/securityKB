@@ -20,11 +20,17 @@ Backup and recovery procedures are critical components of database security. DBA
 
 Lastly, DBAs should stay informed about the latest security vulnerabilities, patches, and best practices in database security. Regularly updating the database system and related software helps mitigate known vulnerabilities and strengthens overall security posture.
 
-Securing databases requires a comprehensive approach that includes access control, authentication, authorization, encryption, monitoring, auditing, backup and recovery, and continuous education. By mastering these fundamentals, DBAs can effectively protect databases and sensitive data from security threats and ensure the integrity and availability of critical information assets.
+Securing databases requires a comprehensive approach that includes authentication, authorization/access control, encryption, logging and monitoring, auditing, backup and recovery, and training. By mastering these fundamentals, DBAs can effectively protect databases and sensitive data from security threats and ensure the integrity and availability of critical information assets.
 
 Some useful resources for securely administering databases:
 
-* []()
+* [OWASP Database Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Database_Security_Cheat_Sheet.html#database-configuration-and-hardening)
+* OWASP Proactive Controls:
+  * [C3: Secure Database Access](https://owasp.org/www-project-proactive-controls/v3/en/c3-secure-database)
+  * [C6: Implement Digital Identity](https://owasp.org/www-project-proactive-controls/v3/en/c6-digital-identity.html)
+  * [C7: Enforce Access Controls](https://owasp.org/www-project-proactive-controls/v3/en/c7-enforce-access-controls.html)
+  * [C8: Protect Data Everywhere](https://owasp.org/www-project-proactive-controls/v3/en/c8-protect-data-everywhere.html)
+  * [C9: Implement Security Logging and Monitoring](https://owasp.org/www-project-proactive-controls/v3/en/c9-security-logging.html)
 * []()
 * []()
 * []()
