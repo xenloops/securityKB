@@ -28,20 +28,22 @@ Many protections exist to prevent this type of attack.
 * The ```HttpOnly``` attribute forces browsers to not allow scripts (e.g. JavaScript or VBscript) to access cookies via the DOM ```document.cookie``` object.
 * The ```SameSite``` attribute prevents browsers from sending a cookie with requests to other sites.
 * The ```Domain``` and ```Path``` attributes define to where a browser may send the cookie;
-  * ```Domain``` restricts the cookie to the specified domain and its subdomains
-  * ```Path``` restricts the cookie to the specified directory and its subdirectories
-* Cookie lifespan attributes:
+  * ```Domain``` restricts the cookie to the specified domain and its subdomains.
+  * ```Path``` restricts the cookie to the specified directory and its subdirectories (unless a subdomain is specified).
+* Cookie lifespan attributes (it's best _not_ to use these unless needed):
   * The ```Max-Age``` attribute (takes precedence) sets a cookie to be persistent until the specified number of seconds elapses.
   * The ```Expires``` attribute persists a cookie until the date and time specified.
   * Note: these allow cookies to be persistent until the specified time, which defeats the purpose of closed sessions (see above). Use short timeouts where possible.
  
 Here's an example of a secured authentication cookie:
 
-```Set-Cookie: sessionId=7c65bd77-f96b-4b0a-bf21-0005526bcc82; Secure; HttpOnly; SameSite=Strict```
+```Set-Cookie: sessionId=7c65bd77-f96b-4b0a-bf21-0005526bcc82; Secure; HttpOnly; SameSite=Strict; Domain=www.secure.org```
 
 # References
 
 * [(OWASP) Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#introduction)
 * [(OWASP) Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
 * [(OWASP) Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+* [(OWASP) Cross Site Scripting Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+* [(Mozilla) Using HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#security)
 * [(Microsoft) Prevent Cross-Site Request Forgery (XSRF/CSRF) attacks in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/anti-request-forgery#authentication-fundamentals)
