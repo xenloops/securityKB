@@ -27,7 +27,7 @@ Many protections exist to prevent this type of attack.
 * The ```Secure``` attribute instructs web browsers to transmit a cookie _only_ through an encrypted channel.
 * The ```HttpOnly``` attribute forces browsers to not allow scripts (e.g. JavaScript or VBscript) to access cookies via the DOM ```document.cookie``` object.
 * The ```SameSite``` attribute prevents browsers from sending a cookie with requests to other sites.
-* The ```Domain``` and ```Path``` attributes define to where a browser may send the cookie;
+* Scope attributes define to where a browser may send the cookie:
   * ```Domain``` restricts the cookie to the specified domain and its subdomains.
   * ```Path``` restricts the cookie to the specified directory and its subdirectories (unless a subdomain is specified).
 * Cookie lifespan attributes (it's best _not_ to use these unless needed):
