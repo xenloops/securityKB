@@ -37,7 +37,7 @@ Many protections exist to prevent this type of attack.
  
 Here's an example of a secured authentication cookie:
 
-```Set-Cookie: sessionId=7c65bd77-f96b-4b0a-bf21-0005526bcc82; HttpOnly; Secure; SameSite=Strict```
+```Set-Cookie: sessionId=7c65bd77-f96b-4b0a-bf21-0005526bcc82; Secure; HttpOnly; SameSite=Strict```
 
 # References
 
