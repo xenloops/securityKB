@@ -26,19 +26,8 @@ Privacy risks may have serious consequences for an organisation, including:
   * Integrity
   * Confidentiality
   * Secure retention
-</details>
-
-<details>
-  <summary> Application </summary>
-
 * Encrypt database connection strings.
 * Ensure applications follow best practices for data security, including input sanitization and output encoding.
-  
-</details>
-
-<details>
-  <summary>  </summary>
-
 </details>
 
 <details>
@@ -51,7 +40,55 @@ Privacy risks may have serious consequences for an organisation, including:
   
 </details>
 
+# Social Media Privacy
+
+Privacy settings on social media sites can be confusing. The following are distilled down to the bare minimum settings to control (IMHO).
+
 <details>
-  <summary>  </summary>
+  <summary> LinkedIn </summary>
+
+  To get to the appropriate settings, go to the Me menu > Settings & Privacy.
+
+  ## Account preferences:
+  ### Profile Information
+  * Personal demographic information -- Check to ensure LI isn't storing your data (unless you trust Microsoft with it)
+  ### General preferences
+  *  Feed preferences > Show political content -- For sanity's sake, turn off (is this really where you want to see such dreg?)
+  ### Syncing options
+  * Sync contacts > Remove all -- Unless you trust Microsoft with them
+  * Partners & services -- Check that you really trust Microsoft with connecting to other services
+
+  ## Sign in & Security:
+  ### Account access
+  * Where you're signed in -- It doesn't hurt to check the active sessions list periodically. Make sure all the entries (usually one for each LI tab open) are yours. End any sessions you don't recognize. (I had sessions still open that I last accessed two months ago -- if anyone knows of a course in managing browser tabs, I'd like to hear about it.)
+  * Two-step verification -- Turn on and use an authenticator app to make logging in more secure (and admittedly yes, slightly less convenient). Don't bother with SMS as a method, as this is susceptible to SIM swapping attacks.
+
+  ## Visibility: 
+
+  Change settings as desired. Of course, part of the point of LI is that people can find you and learn about your work history. But there are things you might not want to share, for example:
+  ### Visibility of your profile & network
+  * Who can see your email address (recommend limiting to connections or no one)
+  * Who can see members you follow
+  * Page owners exporting your data (recommend turning off)
+  * Profile discovery and visibility off LinkedIn (recommend turning off)
+  
+  ### Visibility of your LinkedIn activity
+  * Manage active status (recommend setting to No one, unless you're ok with people seeing you're actively on LI)
+
+  ## Data privacy:
+
+  ### How LinkedIn uses your data
+  Special thanks to the EU for passing the GDPR!
+  * Get a copy of your data -- Not a bad idea to look through periodically.
+  * Search history -- Only visible to LI, but if your search results aren't showing you what you want, it might be a good time to clear it here.
+  * Demographic info -- This is sensitive info. Why give it to a company if it's not required?
+  * Social, economic, and workplace research -- Turn off. You won't benefit from the collection of your data.
+  * Data for Generative AI Improvement -- Turn off. You won't benefit from the collection of your data.
+
+  ### Messaging experience
+  * Read receipts and typing indicators -- Turn off.
+
+    [Work in progress]
 
 </details>
+
