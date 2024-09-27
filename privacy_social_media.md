@@ -86,7 +86,7 @@ All of this info can be used against you -- so it is vital to expose *only* what
 
   Some privacy settings hide in your profile. Get there by opening the hamburger menu and clicking on your user name, then click Edit profile.
   
-  * Reads -- any Substacks you've subscribed to but don't want to appear publically, click off.
+  * Reads -- any Substacks you've subscribed to but don't want to appear publically, click off. You'll need to come back here anytime you add another Substack that you don't want to show on your profile.
   * Privacy -- if you don't want your likes to appear publically, click this off.
 
 </details>
