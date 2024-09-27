@@ -12,6 +12,10 @@ When reviewing the following settings, also check the information you divulge in
 
 All of this info can be used against you -- so it is vital to expose *only* what you really need to.
 
+# Specific social media sites
+
+Following are settings specific to various social media sites.
+
 <details>
   <summary> LinkedIn </summary>
 
