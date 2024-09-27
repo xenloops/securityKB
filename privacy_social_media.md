@@ -76,10 +76,10 @@ All of this info can be used against you -- so it is vital to expose *only* what
 <details>
   <summary> Substack </summary>
 
-  Wonderfully simple privacy/security settings. To get to the appropriate settings, open the hamburger menu and scroll almost to the bottom to the page.
-  
   ## Privacy section
 
+  Wonderfully simple privacy/security settings. To get to the appropriate settings, open the hamburger menu and scroll almost to the bottom to the page.
+  
   * Show likes on profile -- if you're OK with your likes being public, leave on.
   * Allow mentions -- if you want other users to tag you publically, leave on.
   * Allow guest posts -- if you want to allow authors to list you as a co-author, leave on.
