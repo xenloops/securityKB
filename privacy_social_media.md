@@ -84,6 +84,8 @@ All of this info can be used against you -- so it is vital to expose *only* what
   * Allow mentions -- if you want other users to tag you publically, leave on.
   * Allow guest posts -- if you want to allow authors to list you as a co-author, leave on.
 
+  ## Profile settings
+
   Some privacy settings hide in your profile. Get there by opening the hamburger menu and clicking on your user name, then click Edit profile.
   
   * Reads -- any Substacks you've subscribed to but don't want to appear publically, click off. You'll need to come back here anytime you add another Substack that you don't want to show on your profile.
