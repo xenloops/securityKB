@@ -2,6 +2,16 @@
 
 Privacy settings on social media sites are often complex and confusing. The following are distilled down to the bare minimum settings to control (IMHO). Please [let me know](mailto:xenloops@protonmail.com?subject=Correction:privacy_social_media.md) if something looks outdated or incorrect -- personal privacy is so important these days!
 
+When reviewing the following settings, also check the information you divulge in your profile, especially:
+* Name
+* Date of birth
+* Biography
+* Location
+* Contact information
+* Links to your other social media profiles
+
+All of this info can be used against you -- so it is vital to expose *only* what you really need to.
+
 <details>
   <summary> LinkedIn </summary>
 
@@ -62,3 +72,23 @@ Privacy settings on social media sites are often complex and confusing. The foll
   In general, turn this off. These are all settings relating to making LI money, and doesn't benefit you beyond targeted ads. Also, you have no idea where your LI data will be stored in advertisers' databases, or how it will be protected or for how long.
 
 </details>
+
+<details>
+  <summary> Substack </summary>
+
+  Wonderfully simple privacy/security settings. To get to the appropriate settings, open the hamburger menu and scroll almost to the bottom to the page.
+  
+  ## Privacy section
+
+  * Show likes on profile -- if you're OK with your likes being public, leave on.
+  * Allow mentions -- if you want other users to tag you publically, leave on.
+  * Allow guest posts -- if you want to allow authors to list you as a co-author, leave on.
+
+  Some privacy settings hide in your profile. Get there by opening the hamburger menu and clicking on your user name, then click Edit profile.
+  
+  * Reads -- any Substacks you've subscribed to but don't want to appear publically, click off.
+  * Privacy -- if you don't want your likes to appear publically, click this off.
+
+</details>
+  
+
