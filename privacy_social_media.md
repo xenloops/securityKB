@@ -1,6 +1,6 @@
 # Social Media Privacy
 
-Privacy settings on social media sites are often complex and confusing. The following are distilled down to the bare minimum settings to control (IMHO). Please [let me know](mailto:xenloops@protonmail.com?subject=Correction:privacy_social_media.md) if something looks outdated or incorrect -- personal privacy is so important these days!
+Privacy settings on social media sites are often complex and confusing. The following are distilled down to the bare minimum settings to control (IMHO). Please [let me know](mailto:xenloops@protonmail.com?subject=Correction:privacy_social_media.md) if something looks outdated or incorrect -- personal privacy is so important these days! Please also [make requests](mailto:xenloops@protonmail.com?subject=Suggestion:privacy_social_media.md) for sites I haven't covered yet.
 
 When reviewing the following settings, also check the information you divulge in your profile, especially:
 * Name
