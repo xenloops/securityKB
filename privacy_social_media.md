@@ -1,4 +1,4 @@
-# Social Media Privacy
+# Privacy Settings
 
 Privacy settings on social media sites are often complex and confusing. The following are distilled down to the bare minimum settings to control (IMHO). Please [let me know](mailto:xenloops@protonmail.com?subject=Correction:privacy_social_media.md) if something looks outdated or incorrect -- personal privacy is so important these days! Please also [make requests](mailto:xenloops@protonmail.com?subject=Suggestion:privacy_social_media.md) for sites I haven't covered yet.
 
@@ -12,7 +12,7 @@ When reviewing the following settings, also check the information you divulge in
 
 All of this info can be used against you -- so it is vital to expose *only* what you really need to.
 
-# Specific social media sites
+# Social media
 
 Following are settings specific to various social media sites.
 
@@ -96,5 +96,33 @@ Following are settings specific to various social media sites.
   * Privacy -- if you don't want your likes to appear publically, click this off.
 
 </details>
+  
+
+# Internet Service Providers
+
+Following are settings specific to various ISPs.
+
+<details>
+  <summary> Xfinity / Comcast </summary>
+
+  This one's pretty funny, if you have a dark sense of humor. On the main page, Xfinity states ""
+  
+  
+  Keep in mind as you go through these pages -- they're **slow**. Xfinity clearly doesn't put load balancing on this server.
+
+  To get to the appropriate settings, I'm including the direct URLs since navigating this company's privacy settings is a bit like avoiding the Minotaur in his labyrinth. These will route you through **two** pages on which you'll verify your contact information -- this does not appear to be security related, since you're able to change anything there.
+
+The main link is [https://www.xfinity.com/privacy/your-privacy-choices](https://www.xfinity.com/privacy/your-privacy-choices).
+  * [Sensitive personal information preferences](https://www.xfinity.com/privacy/requests/choice#Preferences)
+    * Storage and usage of sensitive personal information: turn off.
+  * Customer choices: click into and use the Turn off all button.
+    * Sensitive personal information
+    * Marketing and special offers: takes you to a 3rd party site mypreferences.com (run by something called PossibleNOW, Inc.), which would seem to contradict Xfinity's "we never sell" blurb. Turn these off if you don't want spam.
+    * Calls, mail advertising, and in-person solicitations
+  * Marketing and special offers
+  * Communications from Xfinity: again, takes you to mypreferences.com. Sheesh, to opt-out of sales calls, info calls, junk mail, or door-to-door solicitations, you need to enter your personal info (which admittedly Xfinity already has, but you're giving it to PossibleNOW, Inc.) and check the box next to each.
+  * [more to come]
+
+  </details>
   
 
