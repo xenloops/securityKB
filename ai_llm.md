@@ -4,21 +4,24 @@ AI and LLMs have revolutionized various industries by providing advanced capabil
 
 The following outlines key security requirements for AI/LLM systems, providing a foundation for mitigating risks and safeguarding these technologies. Fortunately, many of the controls that apply to AI are the same controls in use for decades to secure applications.
 
-## Educate
+## Education
 
 * Provide guidance on avoiding the input of sensitive information. Offer training on best practices for interacting with LLMs securely.
 * Maintain clear policies about data retention, usage, and deletion. 
 
 
 
-## Access controls
+## Access Controls
 
 * Enforce strict user authentication and access controls to prevent unauthorized interactions with the AI/LLM system. This reduces the risk of misuse or exposure to malicious actors.
 * Safeguard APIs used to interact with LLMs by implementing HTTPS protocols, API keys, rate limiting, and activity logging to prevent abuse or unauthorized access.
 * Implement human-in-the-loop controls for privileged operations to prevent unauthorized actions.
+* Implement authorization in downstream systems rather than relying on the LLM to decide whether an action is allowed. Enforce the complete mediation principle so that all requests made to downstream systems via extensions are validated against security policies.
+* Limit the permissions that the system or extensions it uses are granted to other systems to the minimum necessary.
+* Ensure actions taken on behalf of a user are executed on downstream systems in the context of that specific user, and with the minimum privileges necessary.
 
 
-## Data controls
+## Data Controls
 
 * Many AI/LLM systems process sensitive data during training and inference. It is crucial to ensure compliance with privacy regulations (e.g., GDPR, CCPA) by implementing robust data anonymization, encryption, and access controls.
 * Maintain a clear record of the data used for training and the decisions made by the LLM to support traceability, accountability, and debugging in the event of issues.
@@ -33,8 +36,31 @@ The following outlines key security requirements for AI/LLM systems, providing a
 * Allow users to opt out of having their data included in training processes.
 * Use homomorphic encryption to enable secure data analysis and privacy-preserving machine learning to ensure that data remains confidential while being processed by the model.
 * Implement tokenization or redaction to preprocess and sanitize sensitive information. Techniques like pattern matching can detect and redact confidential content before processing.
+* Track data origins and transformations and verify data legitimacy during all model development stages.
+* Validate model outputs against trusted sources to detect signs of model poisoning.
+* Implement strict sandboxing to limit model exposure to unverified data sources. Use anomaly detection techniques to filter out adversarial data.
+* Use data version control (DVC) to track changes in datasets and detect manipulation to maintain model integrity.
+* Store user-supplied information in a vector database, allowing adjustments without re-
+training the entire model.
+* During inference, integrate Retrieval-Augmented Generation (RAG) and grounding techniques to reduce risks of hallucinations.
+* Treat the model as a user, adopting a zero-trust approach; apply proper input validation on responses from the model to backend functions.
+* Employ standard secure software controls (e.g. context-aware output encoding, parameterized queries/prepared statements for database operations, cross-site scripting protections, strict Content Security Policies (CSP)) involving LLM output.
 
+## Model Controls
+* Thoroughly vet any extensions which include functions that are not needed for the intended operation of the system (e.g. an extension used includes the ability to modify and delete documents in a repository or run a specific shell command but fails to prevent other shell commands).
+* Restrict extensions' permissions on downstream systems that are not needed for the
+system (e.g. an extension intended to read data connects to a database using an identity that also has UPDATE, INSERT, and DELETE permissions).
+* Employ independent verification for high-impact actions (e.g. models or extensions that allow a user's documents to be deleted performs deletions without any confirmation from the user).
+* Limit the extensions that LLM agents are allowed to call to only the minimum necessary (e.g. a system that does not require the ability to fetch the contents of a URL should not have that functionality or extension).
+* Limit the functions implemented in LLM extensions to the minimum necessary.
+* Avoid the use of open-ended extensions where possible (e.g. run a shell command or fetch a
+URL) and use extensions with granular functionality.
 
+## Prompt Controls
+* Avoid embedding any sensitive information (e.g. API keys, auth keys, database names, user roles, permission structure of the application) directly in the system prompts. Externalize such information to the systems that the model does not directly access.
+* Avoid using system prompts to control the model behavior where possible. Instead, rely on systems outside of the LLM to ensure this behavior (e.g. detecting and preventing harmful content should be done in external systems).
+* Implement a system of guardrails outside of the LLM itself. Training particular behavior into a model does not guarantee that the model will always adhere to the guard. Use an independent system to inspect the output and determine if the model is in compliance with expectations.
+* Ensure that security controls are enforced independently from the LLM (e.g. privilege separation or authorization bounds checks), and occur in a deterministic, auditable manner (which LLMs are not conducive to). In cases where an agent is performing tasks, multiple agents should be used, each configured with the least privileges needed to perform the desired tasks.
 
 
 ## System Integrity
@@ -47,22 +73,33 @@ The following outlines key security requirements for AI/LLM systems, providing a
 * Prevent leaking sensitive information through error messages or configuration details.
 * 
 
-## Supply chain
+## Supply Chain Controls
 
 * Carefully vet data sources and suppliers. Regularly review and audit supplier security and access for changes in their security posture or terms and conditions.
 * Employ vulnerability scanning, management, and patching components. For development environments with access to sensitive data, apply these controls in those environments, too.
+* Maintain a system component inventory using a Software Bill of Materials (SBOM) to
+ensure there is an up-to-date, accurate, and signed inventory of components, preventing tampering with deployed packages or known vulnerabilities.
+* Maintain a system component license inventory and conduct regular audits of all software, tools, and datasets to ensure compliance and transparency.
+* Use models only from verifiable sources and use model integrity checks with signing and file hashes to compensate for the lack of strong model provenance. Use code signing for externally supplied code.
+* Implement a patching policy to mitigate vulnerable or outdated components. Ensure the system uses a maintained version of APIs and the underlying model.
+* Encrypt models with integrity checks and use vendor attestation APIs to prevent tampered apps and models and terminate applications of unrecognized software.
 
 
 
-
-## Monitoring
+## Logging and Monitoring
 
 * Employ systems to monitor for unusual activities or anomalies during LLM operation. This can include detecting abnormal request patterns or unexpected model outputs.
+* Implement strict monitoring and auditing practices for collaborative model development
+environments to prevent and quickly detect any abuse.
 
 ## Testing
 
 * Conduct adversarial testing and attack simulations: perform regular penetration testing and breach simulations, treating the model as an untrusted user to test the effectiveness of trust boundaries and access controls.
-
+* Employ anomaly detection and adversarial robustness tests on supplied models and data can help
+detect tampering and poisoning.
+* Test model robustness with red team campaigns and adversarial techniques, such as federated learning, to minimize the impact of data perturbations.
+* Monitor training loss and analyze model behavior for signs of poisoning. Use thresholds to
+detect anomalous outputs.
 
 
 ## Conclusion
