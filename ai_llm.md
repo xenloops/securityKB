@@ -2,6 +2,15 @@
 
 AI and LLMs have revolutionized various industries by providing advanced capabilities such as natural language understanding, predictive analysis, and decision support. However, the increasing integration of AI/LLM technologies into critical systems has also heightened concerns about their security. Securing these systems is essential to protect sensitive data, ensure trust, and maintain the reliability and integrity of AI-driven applications.
 
+Thankfully, many of the existing principles, best practices, and controls the software industry has developed over decades apply to LLMs. Notably:
+
+* Strictly control access to the system and by the system to other systems and data sources.
+* Implement input validation to prevent injection attacks (trust no input).
+* Use robust output validation mechanisms.
+* Protect sensitive data using encryption and anonymization at all levels.
+* Audit supply chain dependencies periodically.
+* Monitor and secure training data to prevent poisoning.
+
 The following outlines key security requirements for AI/LLM systems, providing a foundation for mitigating risks and safeguarding these technologies. Fortunately, many of the controls that apply to AI are the same controls in use for decades to secure applications.
 
 ## Education
