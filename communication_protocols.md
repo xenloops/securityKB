@@ -109,7 +109,7 @@ SPI is a high-speed communication protocol used for short-distance data exchange
 
 ## Inter-Integrated Circuit (I2C)
 
-I2C is a widely used protocol for communication between low-speed peripherals and microcontrollers over short distances. Its shared bus architecture simplifies wiring but introduces weaknesse3s to unauthorized connections and signal interference. Device authentication and secure configurations are critical for mitigating these risks.
+I2C is a widely used protocol for communication between low-speed peripherals and microcontrollers over short distances. Its shared bus architecture simplifies wiring but introduces weaknesses to unauthorized connections and signal interference. Device authentication and secure configurations are critical for mitigating these risks.
 
 * Implement device authentication for all I2C-connected peripherals.
 * Encrypt sensitive communication over shared buses.
