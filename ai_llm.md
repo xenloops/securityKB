@@ -15,6 +15,8 @@ The following outlines key security requirements for AI/LLM systems, providing a
 
 ## Education
 
+Effective LLM security begins with comprehensive education. Ensuring all team members understand the risks, benefits, and best practices for secure usage of language models is essential for mitigating threats and maintaining compliance with industry standards.
+
 * Provide guidance on avoiding the input of sensitive information. Offer training on best practices for interacting with LLMs securely.
 * Provide comprehensive training for users on the limitations of LLMs, the importance of independent verification of generated content, and the need for critical thinking. Include domain-specific training to ensure users can effectively evaluate LLM outputs within their field of expertise.
 * Maintain clear policies about data retention, usage, and deletion. 
@@ -22,6 +24,8 @@ The following outlines key security requirements for AI/LLM systems, providing a
 * Identify the risks and possible harms associated with LLM-generated content, and clearly communicate these risks and limitations to users.
 
 ## Access Controls
+
+Robust access controls are critical to limit LLM usage to authorized personnel and systems. Implementing clear permissions and multi-factor authentication (where possible) ensures sensitive data are accessible only to those with explicit clearance.
 
 * Enforce strict user authentication and access controls to prevent unauthorized interactions with the AI/LLM system. This reduces the risk of misuse or exposure to malicious actors.
 * Safeguard APIs used to interact with LLMs by implementing HTTPS protocols, API keys, rate limiting, and activity logging to prevent abuse or unauthorized access.
@@ -33,6 +37,8 @@ The following outlines key security requirements for AI/LLM systems, providing a
 * Restrict the LLM's access to network resources, internal services, and APIs.
 
 ## Data Controls
+
+Protecting data integrity and privacy is paramount in LLM operations. Enforcing strict data handling policies, anonymization techniques, and secure transmission protocols minimizes the risk of exposing sensitive information.
 
 * Implement tools and processes to automatically validate key outputs, especially output from high-stakes environments.
 * Ensure compliance with privacy regulations (e.g., GDPR, CCPA) by implementing robust data anonymization, encryption, and access controls.
@@ -64,6 +70,8 @@ training the entire model.
 
 ## Model Controls
 
+Implementing model-specific controls ensures the safe and compliant deployment of LLMs. This includes fine-tuning configurations, mitigating bias, and restricting functionalities that could lead to unintended or harmful outcomes.
+
 * Establish secure coding practices to prevent the integration of vulnerabilities due to
 incorrect code suggestions.
 * Thoroughly vet any extensions which include functions that are not needed for the intended operation of the system (e.g. an extension used includes the ability to modify and delete documents in a repository or run a specific shell command but fails to prevent other shell commands).
@@ -78,12 +86,17 @@ system (e.g. an extension intended to read data connects to a database using an 
 * Train models to detect and mitigate adversarial queries and extraction attempts.
 
 ## Prompt Controls
+
+Prompt controls prevent unintended disclosures or misuse of the LLM by enforcing context-aware input restrictions. These measures ensure outputs align with the intended use cases and adhere to ethical and compliance standards.
+
 * Avoid embedding any sensitive information (e.g. API keys, auth keys, database names, user roles, permission structure of the application) directly in the system prompts. Externalize such information to the systems that the model does not directly access.
 * Avoid using system prompts to control the model behavior where possible. Instead, rely on systems outside of the LLM to ensure this behavior (e.g. detecting and preventing harmful content should be done in external systems).
 * Implement a system of guardrails outside of the LLM itself. Training particular behavior into a model does not guarantee that the model will always adhere to the guard. Use an independent system to inspect the output and determine if the model is in compliance with expectations.
 * Ensure that security controls are enforced independently from the LLM (e.g. privilege separation or authorization bounds checks), and occur in a deterministic, auditable manner (which LLMs are not conducive to). In cases where an agent is performing tasks, multiple agents should be used, each configured with the least privileges needed to perform the desired tasks.
 
 ## System Integrity
+
+Maintaining the integrity of systems interacting with LLMs safeguards against vulnerabilities and cyberattacks. Regular updates, patch management, and strict configuration controls ensure that systems remain resilient and trustworthy.
 
 * Protect the LLM from unauthorized modifications or adversarial attacks that could compromise its behavior. Use cryptographic hashing and verification techniques to maintain the integrity of the model files.
 * Secure the runtime environment where the LLM is deployed. This includes containerization, network segmentation, and regular updates to prevent vulnerabilities in underlying infrastructure.
@@ -93,6 +106,8 @@ system (e.g. an extension intended to read data connects to a database using an 
 * Prevent leaking sensitive information through error messages or configuration details.
 
 ## Supply Chain Controls
+
+Securing the supply chain of LLM development and deployment protects against compromised dependencies. Vetting vendors, verifying software provenance, and continuous monitoring of third-party integrations reduce the risk of malicious infiltration.
 
 * Carefully vet data sources and suppliers. Regularly review and audit supplier security and access for changes in their security posture or terms and conditions.
 * Employ vulnerability scanning, management, and patching components. For development environments with access to sensitive data, apply these controls in those environments, too.
@@ -105,12 +120,16 @@ ensure there is an up-to-date, accurate, and signed inventory of components, pre
 
 ## Logging and Monitoring
 
+Comprehensive logging and real-time monitoring enable swift detection and response to anomalies in LLM interactions. These practices are essential for auditing, compliance, and maintaining overall system security.
+
 * Maintain detailed immutable logs of retrieval activities to detect and respond promptly to suspicious behavior.
 * Employ systems to monitor for unusual activities or anomalies during LLM operation. This can include detecting abnormal request patterns or unexpected model outputs.
 * Implement strict monitoring and auditing practices for collaborative model development environments to prevent and quickly detect any abuse.
 * Monitor and manage resource allocation dynamically to prevent any single user or request from consuming excessive resources.
 
 ## Testing
+
+Continuous testing of LLM implementations ensures that security measures remain effective against evolving threats. Rigorous penetration tests, scenario simulations, and validation of outputs ensure the LLM performs reliably within the regulated environment.
 
 * Conduct adversarial testing and attack simulations: perform regular penetration testing and breach simulations, treating the model as an untrusted user to test the effectiveness of trust boundaries and access controls.
 * Employ anomaly detection and adversarial robustness tests on supplied models and data can help detect tampering and poisoning.
