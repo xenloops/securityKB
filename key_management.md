@@ -1,49 +1,104 @@
-# Key Management / PKI
+# Key/Certificate Management / PKI
 
-Implementing cryptographic key management in a secure manner is not the easiest thing. Create a plan for an organization's  overall cryptographic strategy to guide developers working on different applications and ensure that each application's cryptographic capability meets minimum requirements and best practices. Identify the cryptographic and key management requirements for each application and map all components that process or store cryptographic key material. Document and harmonize rules and practices for:
+Implementing proper cryptographic key management in a secure manner is not the easiest thing. Create a plan for an organization's overall cryptographic strategy to guide developers working on different applications and ensure that each application's cryptographic capability meets minimum requirements and best practices. Identify the cryptographic and key management requirements for each application and map all components that process or store cryptographic key material. Document and harmonize rules and practices for:
 
   * Key lifecycle management (generation, distribution, destruction)
   * Key storage
   * Key agreement
   * Key compromise, recovery, and zeroization
 
-
 <details>
-  <summary> Key Management Lifecycle Best Practices </summary>
+  <summary> Key Management Lifecycle </summary>
+
+  * Use trusted CAs and require strong verification of identity before certificate issuance.
+  * Implement mechanisms for automated certificate renewal to prevent service disruptions.
+  * Monitor and alert for impending certificate expirations.
+  * Maintain detailed logs of certificate issuance, renewal, and revocation activities.
+  * Ensure each device or entity uses a unique certificate to support granular access control and auditing.
 
 References in this section:
    * [FIPS 140-2](https://csrc.nist.gov/publications/detail/fips/140/2/final)
    * [NIST SP 800-133](https://csrc.nist.gov/pubs/sp/800/133/r2/final)
-   * 
 
-### Key generation
+### Training and Documentation
+
+Ensuring that all stakeholders understand certificate management practices reduces the risk of human error.
+
+  * Provide training on best practices for certificate management and incident response.
+  * Maintain clear, up-to-date documentation of certificate policies, configurations, and procedures.
+  * Periodically review and update training and documentation to address evolving threats and standards.
+    
+### Certificate generation
 
    * Cryptographic keys must be generated within a cryptographic module with at least FIPS 140-2 compliance. The module in which a key is generated is the key-generating module.
    * Any random value required by the key-generating module must be generated within that module; that is, a random value generator must be implemented within a cryptographic module with at least a FIPS 140-2 compliance generating the key.
    * Prefer hardware cryptographic modules over software cryptographic modules.
 
-### Key distribution
+### Certificate distribution
 
 Transport generated keys using secure channels and used by their associated cryptographic algorithm within at least a FIPS 140-2 compliant cryptographic module. For additional detail for the recommendations in this section refer to NIST SP 800-133.
 
-### Key storage
+### Certificate Use
 
+The proper use of certificates is vital to maintain trust in system communications and data.
+
+  * Require the use of secure protocols (e.g., TLS) for all certificate-based communications.
+  * Implement certificate pinning to prevent man-in-the-middle (MITM) attacks.
+  * Use OCSP or CRLs to validate certificates before trust is established.
+  * Configure systems to use strong cipher suites and disallow deprecated ones (e.g., SSL 3.0, TLS 1.0).
+  * Enforce mutual certificate-based authentication where applicable, such as between devices and servers.
+
+### Certificate storage
+
+Certificates must be securely stored to prevent unauthorized access or misuse.
+
+  * Use Hardware Security Modules or an isolated cryptographic service for storing private keys and sensitive certificate data.
+  * Store all certificates and keys encrypted using strong algorithms such as AES-256.
+  * Enforce strict access controls for certificate storage and retrieval.
+  * Regularly back up certificates and private keys in encrypted formats, ensuring recovery in case of data loss.
+  * Use secure hardware or software mechanisms to detect and respond to tampering attempts.
   * Understand where cryptographic keys are stored within the application and in any memory devices.
-  * Keys must be protected on both volatile and persistent memory, ideally processed within secure cryptographic modules.
-  * Never store keys in plaintext format.
-  * Store keys in a cryptographic vault, such as a hardware security module (HSM) or isolated cryptographic service.
-  * If storing keys in offline devices/databases, encrypt the keys using Key Encryption Keys (KEKs) prior to the export of the key material. KEK length (and algorithm) should be equivalent to or greater in strength than the keys being protected.
-  * Ensure that keys have integrity protections applied while in storage (consider dual purpose algorithms that support encryption and a Message Authentication Code MAC).
-  * Ensure that standard application level code never reads or uses cryptographic keys directly; instead use key management libraries.
-  * Perform all work in the vault such as key access, encryption, decryption, signing, etc.
+  * Keys must be protected in both volatile and persistent memory, ideally processed within secure cryptographic modules.
+  * If storing keys in offline devices/databases, encrypt the keys using Key Encryption Keys (KEKs) prior to the export of the key material. KEK length (and algorithm) must be at least as strong as the keys being protected.
+  * Ensure that keys have integrity protections applied while in storage (consider dual purpose algorithms that support encryption and a Message Authentication Code).
+  * Ensure that standard application code never reads or uses cryptographic keys directly; instead use key management libraries.
+  * Perform all work such as key access, encryption, decryption, signing, etc. in the vault.
 
-### Escrow and Backup
+### Certificate Escrow and Backup
 
    * Data encrypted with lost cryptographic keys will never be recovered. Therefore, it is essential that the application incorporate a secure key backup capability, especially those that support encryption for long-term data stores.
    * When backing up keys, ensure that the database that is used to store the keys is encrypted using at least a FIPS 140-2 validated module. It is sometimes useful to escrow key material for use in investigations and for re-provisioning of key material to users in the event that the key is lost or corrupted.
    * Never escrow keys used for performing digital signatures, but consider the need to escrow keys that support encryption. Oftentimes, escrow can be performed by the Certificate Authority (CA) or key management system that provisions certificates and keys, however in some instances separate APIs must be implemented to allow the system to perform escrow for the application.
 
-### Accountability and Audit
+### Certificate Revocation
+
+Certificate revocation ensures compromised or invalid certificates are promptly removed from trust chains.
+
+  * Support Online Certificate Status Protocol (OCSP) and Certificate Revocation Lists (CRLs).
+  * Automate revocation status checks during every certificate validation process.
+  * Revoke certificates immediately upon detection of compromise or misuse.
+  * Ensure revocation information is propagated quickly and reliably across the system.
+
+### Securing Root and Intermediate Certificate Authorities (CAs)
+
+The root and intermediate CAs are the foundation of trust in certificate-based systems. Securing them is paramount.
+
+  * Keep root CAs offline to protect against compromise.
+  * Use Hardware Security Modules (HSMs) for key storage and restrict access to intermediate CA infrastructure.
+  * Regularly rotate CA keys and ensure old keys are securely decommissioned.
+  * Log all CA activities and monitor for suspicious actions.
+  * Align CA operations with standards such as NIST SP 800-57 and RFC 5280.
+
+### Certificate Monitoring and Incident Response
+
+Continuous monitoring and timely response to incidents involving certificates are crucial for maintaining system security.
+
+  * Implement tools to monitor the health and status of certificates in real-time.
+  * Configure alerts for certificate anomalies, such as unauthorized issuance or suspicious revocations.
+  * Develop and regularly test incident response plans specific to certificate management issues.
+  * Leverage threat intelligence to detect and respond to emerging vulnerabilities in certificate practices.
+
+### Certificate Accountability and Audit
 
 Accountability involves the identification of those that have access to, or control of, cryptographic keys throughout their lifecycles. Accountability can be an effective tool to help prevent key compromises and to reduce the impact of compromises once they are detected.
 
@@ -72,7 +127,7 @@ Consider new technology developments and attacks. Frequently review the actions 
 
 Strong cryptographic systems can be compromised by lax and inappropriate human actions. Review highly unusual events as possible indicators of attempted attacks on the system.
 
-### Key Compromise and Recovery
+### Certificate Compromise and Recovery
 
 Key compromise has the following implications:
 
