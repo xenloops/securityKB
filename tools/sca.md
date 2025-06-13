@@ -2,7 +2,11 @@
 
 ## What is SCA?
 
-Software Composition Analysis tells you what libraries a software project depends upon (or "uses"). It then looks up those libraries (or dependencies) and their versions to find whether they have any known vulnerabilities (or CVEs). SCA is basically a glorified database lookup engine, though some scanners also attempt to figure out whether your project is calling vulnerable functions inside those dependencies. 
+Software Composition Analysis tells you what libraries a software project depends upon (or "uses"). It then looks up those libraries (or dependencies) and their versions to find whether they have any known vulnerabilities (or CVEs). SCA is basically a glorified database lookup engine, though some scanners also attempt to figure out whether your project is calling vulnerable functions inside those dependencies.
+
+## What is an SBOM?
+
+A Software Bill of Materials is derived from output from an SCA scan. It lists the dependencies in a project, and often includes vulnerability data. Organizations in regulated indistries often have a requirement to produce an SBOM with commentary regarding each vulnerabilty (including any controls in place or plans to remediate the vulnerability).
 
 ## When should we get an SCA scan done?
 
