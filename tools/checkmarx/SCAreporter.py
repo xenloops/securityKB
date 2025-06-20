@@ -2,9 +2,12 @@
 # Run like:
 # python3 SCAreporter.py
 
-import subprocess
-import json
+#!/usr/bin/env python3
 import csv
+import json
+import subprocess
+import sys
+import os
 
 exec_cx = "path/to/checkmarx/cli/tool"
 
@@ -15,36 +18,24 @@ TEMP_JSON_FILE = 'sca_temp_output.json'
 
 
 # Define a function to extract SCA data from Checkmarx CLI for a given scan ID
-def get_sca_data(scan_id):
-    # Run the Checkmarx CLI command to fetch SCA data for the scan
+def run_cx_scan(scan_id, json_output_file):
+    """
+    Runs the Checkmarx CLI to get SCA scan results and outputs to a file.
+    """
     try:
-        command = [
+        cmd = [
             exec_cx, "results", "show", 
             "--sca-hide-dev-test-dependencies", 
             "--scan-id", scan_id, 
             "--report-format", "json", 
             "--report-sbom-format", "CycloneDX", 
-            "--output-name", TEMP_JSON_FILE]
-        result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
-        scan_data = json.loads(result.stdout)
-        
-        # Extract the necessary fields from the scan data
-        dependencies = []
-        for dependency in scan_data.get("dependencies", []):
-            repo_name = dependency.get("repository", "N/A")
-            package_name = dependency.get("name", "N/A")
-            package_version = dependency.get("version", "N/A")
-            package_license = dependency.get("license", "N/A")
-            cves = ', '.join(dependency.get("cves", [])) if "cves" in dependency else "N/A"
-            purl = dependency.get("purl", "N/A")
-            
-            # Collect data for each dependency
-            dependencies.append([repo_name, package_name, package_version, package_license, cves, purl])
-        
-        return dependencies
+            "--output-name", json_output_file]
+        ]
+        subprocess.run(cmd, check=True)
+        return True
     except subprocess.CalledProcessError as e:
-        print(f"Error fetching data for scan ID {scan_id}: {e.stderr.decode()}")
-        return []
+        print(f"Error running Checkmarx CLI for scan ID {scan_id}: {e}", file=sys.stderr)
+        return False
 
 # Define a function to read scan IDs from a text file
 def read_scan_ids(filename):
@@ -155,8 +146,4 @@ def main():
 
 # If this script is being run directly, start the process
 if __name__ == "__main__":
-    # Specify the input file with scan IDs and the output CSV file
-    scan_ids_file = "scan_ids.txt"  # Input file with scan IDs (one per line)
-    output_csv_file = "sca_dependencies.csv"  # Output CSV file
-    
-    main(scan_ids_file, output_csv_file)
+    main()
