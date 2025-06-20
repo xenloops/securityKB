@@ -29,7 +29,7 @@ def run_cx_scan(scan_id, json_output_file):
             "--scan-id", scan_id, 
             "--report-format", "json", 
             "--report-sbom-format", "CycloneDX", 
-            "--output-name", json_output_file]
+            "--output-name", json_output_file
         ]
         subprocess.run(cmd, check=True)
         return True
@@ -69,13 +69,25 @@ def load_json_file(filepath):
         return None
 
 def process_scan_data(scan_data):
-    """
-    Extracts the required data from the scan JSON.
-    """
     rows = []
-    repository = scan_data.get('repository', '')
 
-    dependencies = scan_data.get('dependencies', [])
+    repository = scan_data.get('repository', '') or scan_data.get('project', {}).get('name', '')
+
+    # Find the first SCA result section
+    sca_result = None
+    for result in scan_data.get('results', []):
+        if result.get('type') == 'sca':
+            sca_result = result
+            break
+
+    if not sca_result:
+        print("⚠️ No SCA results found in scan data.", file=sys.stderr)
+        return rows
+
+    dependencies = sca_result.get('dependencies', [])
+    if not dependencies:
+        print("⚠️ No dependencies found in SCA result.", file=sys.stderr)
+
     for dependency in dependencies:
         pkg_name = dependency.get('packageName', '')
         pkg_version = dependency.get('version', '')
@@ -93,7 +105,35 @@ def process_scan_data(scan_data):
             'PURL': purl
         }
         rows.append(row)
+
     return rows
+
+# def process_scan_data(scan_data):
+#     """
+#     Extracts the required data from the scan JSON.
+#     """
+#     rows = []
+#     repository = scan_data.get('repository', '')
+
+#     dependencies = scan_data.get('dependencies', [])
+#     for dependency in dependencies:
+#         pkg_name = dependency.get('packageName', '')
+#         pkg_version = dependency.get('version', '')
+#         pkg_license = dependency.get('license', '')
+#         cves = dependency.get('cves', [])
+#         cves_str = "; ".join(cves) if isinstance(cves, list) else str(cves)
+#         purl = dependency.get('purl', '')
+
+#         row = {
+#             'Repository': repository,
+#             'Package Name': pkg_name,
+#             'Package Version': pkg_version,
+#             'Package License': pkg_license,
+#             'CVEs': cves_str,
+#             'PURL': purl
+#         }
+#         rows.append(row)
+#     return rows
 
 # Main function to orchestrate the scanning and CSV writing
 def main():
