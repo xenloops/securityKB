@@ -13,7 +13,7 @@ exec_cx = "path/to/checkmarx/cli/tool"
 def get_sca_data(scan_id):
     # Run the Checkmarx CLI command to fetch SCA data for the scan
     try:
-        command = [exec_cx, "sca", "results", "get", "--scan-id", scan_id, "--output-format", "json"]
+        command = [exec_cx, "results", "show", "--sca-hide-dev-test-dependencies", "--scan-id", scan_id, "--report-format", "json", "--report-sbom-format", "CycloneDX"]
         result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
         scan_data = json.loads(result.stdout)
         
