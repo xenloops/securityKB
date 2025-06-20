@@ -1,3 +1,7 @@
+# First create a file scan_ids.txt, containing one scan ID per line.
+# Run like:
+# python3 SCAreporter.py
+
 import subprocess
 import json
 import csv
