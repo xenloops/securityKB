@@ -33,13 +33,13 @@ Confirm the issue:
 
 Validate the context:
 
-   * Is the data input controlled by a user?
+   * Is the data input controlled by a user or other untrusted system?
    * Is it sanitized or escaped before it hits the dangerous sink/output?
 
-Mark false positives. Mature organizations have a Security Center of Excellence with a findings review board. If a finding doesn't look exploitable:
+Mark false positives. Mature organizations have a Security Center of Excellence with a findings review board to consult with. If a finding doesn't look exploitable:
     
-   1. Mark it as proposed not exploitable (or similar verbiage for the tool).
-   2. Document why you think it’s not exploitable (with code evidence).
+   1. Mark it as **proposed not exploitable** (or similar verbiage for the tool).
+   2. Document why you think it’s not exploitable (with evidence).
    3. Route the finding for the appropriate review (this step may wait until all findings are addressed).
 
 If the finding is valid:
@@ -87,7 +87,7 @@ Always log:
 
   * Update scan rules or suppressions for recurring false positives —- but only with strong evidence.
   * Feed fixes back into secure coding guidelines.
-  * Schedule regular review of "accepted risk" items.
+  * Schedule a periodic review of "accepted risk" items.
 
 ## Golden Rules
 
