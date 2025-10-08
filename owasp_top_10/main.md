@@ -38,5 +38,5 @@ No decent logging? No alerting? No monitoring? That means breaches happen in the
 
 ## Server-Side Request Forgery (SSRF) (2021: A10)
 
-The server is tricked into making unintended requests (e.g. internal network, cloud metadata endpoints). Attackers use SSRF to breach internal systems not directly exposed to the outside.
+The server is tricked into making unintended requests (e.g. internal network, cloud metadata endpoints). The problem occurs when at least part of a remote resource URL is under user control and the application neglects to validate it. Attackers use SSRF to breach internal systems not directly exposed to the outside.
 
