@@ -2,7 +2,7 @@
 
 ## Broken Access Control (2021: A01)
 
-Application neglects to check who's allowed to do what. Attackers can bypass controls (e.g. by forced browsing or modifying URLs/tokens) to access data or perform actions they shouldn't. Akin to leaving the keys in an unlocked car.
+Software neglects to check who's allowed to do what. Attackers can bypass controls (e.g. by forced browsing or modifying URLs/tokens) to access data or perform actions they shouldn't. Akin to leaving the keys in an unlocked car.
 
 ## Cryptographic Failures (2021: A02)
 
@@ -26,17 +26,17 @@ Using libraries, frameworks, or modules that have known vulnerabilities or are n
 
 ## Identification and Authentication Failures (2021: A07)
 
-When the system can’t reliably check who someone is, or allows bad authentication flows. Weak passwords, lack of MFA, sessions not invalidated—all those nasty bits. If attackers can pretend to be someone else, rest assured they will. 
+The system doesn’t reliably check who someone is, or allows bad authentication flows. Weak passwords, lack of MFA, sessions not invalidated, etc. If attackers can pretend to be someone else, they _will_.
 
-Software and Data Integrity Failures (2021: A08)
+## Software and Data Integrity Failures (2021: A08)
 
-Assuming that updates, data, or external resources are safe without verifying. Includes insecure deserialization, untrusted CI/CD pipelines, or software supply chain attacks. If someone can tamper under the hood, your safety checks go out the window. 
+Assuming that updates, data, or external resources are safe without verifying. Includes insecure deserialization, untrusted CI/CD pipelines, or software supply chain attacks. If someone can tamper under the hood, safety checks are useless.
 
-Security Logging and Monitoring Failures (2021: A09)
+## Security Logging and Monitoring Failures (2021: A09)
 
-No decent logging? No alerting? No monitoring? That means breaches happen in the dark, and you’re utterly unprepared. Detecting, investigating, and responding to attacks depends on this stuff—but many apps treat it as afterthought. 
+No decent logging? No alerting? No monitoring? That means breaches happen in the dark, leaving everyone unprepared. Detecting, investigating, and responding to attacks depends on this, but many apps treat it as afterthought.
 
-Server-Side Request Forgery (SSRF) (2021: A10)
+## Server-Side Request Forgery (SSRF) (2021: A10)
 
-Your server is tricked into making unintended requests (e.g. internal network, cloud metadata endpoints). Attackers use SSRF to breach internal systems not directly exposed to the outside. It’s sneaky, dangerous, and often overlooked until it's too late. 
+The server is tricked into making unintended requests (e.g. internal network, cloud metadata endpoints). Attackers use SSRF to breach internal systems not directly exposed to the outside.
 
