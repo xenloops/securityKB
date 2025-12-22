@@ -157,7 +157,9 @@ This process emphasizes automation, traceability, and regulatory alignment to st
   
     The compliance profile is used to produce deterministic output based on declared dependencies.
 
-7. SBOM Validation
+    The SBOM generated is then imported into Dependency-Track to report vulnerability data. The SBOM containing any vulnerability information can be re-exported to machine-readable form for e.g. FDA submission.
+
+8. SBOM Validation
 
     The generated SBOM is manually validated by:
   
@@ -167,14 +169,14 @@ This process emphasizes automation, traceability, and regulatory alignment to st
   
     Any discrepancies or tool limitations are documented.
 
-8. Handling Tool Limitations
+9. Handling Tool Limitations
 
     Known limitations of automated SBOM generation tools (e.g., incomplete metadata for binary‑only dependencies) are explicitly acknowledged. Any missing components are:
 
     * Added manually to the SBOM where feasible, or
     * Documented as SOUP in accompanying documentation
 
-9. SBOM Maintenance
+10. SBOM Maintenance
 
     SBOMs should be regenerated:
   
@@ -184,7 +186,7 @@ This process emphasizes automation, traceability, and regulatory alignment to st
   
     Generated SBOMs are versioned and retained as part of the project’s design and quality records.
 
-10. Records
+11. Records
 
     The following artifacts are retained:
   
