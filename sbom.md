@@ -153,7 +153,7 @@ This process emphasizes automation, traceability, and regulatory alignment to st
 
     Standard invocation:
   
-    ```cdxgen --type ios --profile compliance --spec-version 1.5 --format json --output sbom.json```
+    ```cdxgen --type ```_<project type>_ ```--profile compliance --spec-version 1.5 --format json --output sbom.json```
   
     The compliance profile is used to produce deterministic output based on declared dependencies.
 
