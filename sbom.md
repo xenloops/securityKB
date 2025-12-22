@@ -110,3 +110,87 @@ Beyond giving teams useful insight into a project's development, generating an S
 
 This process emphasizes automation, traceability, and regulatory alignment to streamline SBOM generation and validation with minimal manual labor.
    
+
+
+## SBOM Standard Operating Procedure (SOP)
+
+1. Purpose
+
+    This SOP defines the standardized process used to identify, generate, validate, and maintain a Software Bill of Materials (SBOM) for iOS software products. The objective is to ensure accurate identification of third‑party software components (including SOUP) in support of cybersecurity risk management and regulatory submissions (e.g., FDA premarket and postmarket documentation).
+
+2. Scope
+
+    This procedure applies to:
+
+    * Applications and associated libraries
+    * All third‑party software components, whether managed by a package manager or manually integrated
+    * SBOMs generated for regulatory, security, or compliance purposes
+
+    This SOP does not replace vulnerability management or patch management procedures.
+
+3. Definitions
+
+    * SBOM: Software Bill of Materials
+    * SOUP: Software of Unknown Provenance
+    * Declared Dependency: A component referenced via a package manager manifest
+    * Unmanaged Dependency: A component manually embedded (e.g., binary framework)
+    * Direct dependency: A component used by the application directly
+    * Transitive dependency: A component used by a direct dependency of the application
+
+4. Responsibilities
+
+    * Engineering: Maintains accurate dependency manifests and project configuration
+    * Security / AppSec: Generates SBOMs, validates completeness, documents limitations
+    * Regulatory / Quality: Reviews SBOMs for inclusion in regulatory submissions
+
+5. Dependency Identification
+
+    Appropriate package manager(s) are used to evaluate the project. Dependency managers in use are identified by the presence of authoritative resolution and lockfiles. Unmanaged dependencies are identified by scanning the repository and Xcode project for appropriate framework files.
+
+6. SBOM Generation
+
+    SBOMs are generated using the open‑source CycloneDX cdxgen tool.
+
+    Standard invocation:
+  
+    ```cdxgen --type ios --profile compliance --spec-version 1.5 --format json --output sbom.json```
+  
+    The compliance profile is used to produce deterministic output based on declared dependencies.
+
+7. SBOM Validation
+
+    The generated SBOM is manually validated by:
+  
+    1. Comparing SBOM components against all dependency lockfiles
+    2. Confirming that all declared dependencies appear in the SBOM
+    3. Reviewing unmanaged binary components and documenting them separately if not captured
+  
+    Any discrepancies or tool limitations are documented.
+
+8. Handling Tool Limitations
+
+    Known limitations of automated SBOM generation tools (e.g., incomplete metadata for binary‑only dependencies) are explicitly acknowledged. Any missing components are:
+
+    * Added manually to the SBOM where feasible, or
+    * Documented as SOUP in accompanying documentation
+
+9. SBOM Maintenance
+
+    SBOMs should be regenerated:
+  
+    * For each major software release
+    * When third‑party dependencies change
+    * When required for regulatory or audit purposes
+  
+    Generated SBOMs are versioned and retained as part of the project’s design and quality records.
+
+10. Records
+
+    The following artifacts are retained:
+  
+    * SBOM files (CycloneDX JSON)
+    * Dependency lockfiles
+    * SBOM validation notes and discrepancy records
+    * Tool version and command documentation
+  
+
