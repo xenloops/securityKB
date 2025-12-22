@@ -196,3 +196,60 @@ This process emphasizes automation, traceability, and regulatory alignment to st
     * Tool version and command documentation
   
 
+## Audit-defensible workflow
+
+  1. Generate SBOM
+
+     Keep:
+     
+     * SBOM file
+     * cdxgen version
+     * Command used
+
+  2. Import SBOM into Dependency-Track
+
+     Keep:
+
+     * Upload timestamp
+     * Project version
+     * Vulnerability scan results
+
+  3. Review findings manually
+
+     For each vulnerability, confirm the component is actually used. Note:
+
+     * Exploitability
+     * Reachable code
+     * Platform relevance
+     
+     This is required for FDA — raw CVE lists are not enough.
+
+  4. Handle no-CVE cases correctly:
+
+     If no vulns are reported, state explicitly:
+
+     * Data sources used (NVD, GHSA, etc.)
+     * Scan date
+     * Limitations (esp. binary frameworks)
+
+     Remember, "No known vulnerabilities at time of analysis" ≠ "Secure forever".
+
+  5. How this shows up in FDA documentation
+
+     Use language like:
+
+     > The SBOM was analyzed using an open-source vulnerability correlation tool that maps CycloneDX components to public vulnerability databases including NVD and GitHub Security Advisories. Identified vulnerabilities were reviewed for applicability to the environment and assessed for exploitability. Components without known vulnerabilities were documented as such at the time of analysis, with acknowledgment of database and tooling limitations.
+
+
+## Blunt reality check
+
+  * SBOM ≠ vulnerability assessment
+  * CVE presence ≠ risk
+  * No CVEs ≠ safe
+
+  Auditors and other reviewers are looking for:
+
+  * Process
+  * Traceability
+  * Judgment
+
