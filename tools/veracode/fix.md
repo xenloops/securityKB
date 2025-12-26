@@ -65,7 +65,7 @@ TODO _Draft notes, will be refined._
 14. To see results, a scan must be run on a successfully built project.
 15. Build the project and resolve any errors that appear.
 16. Click the Scan project text at the top of the Veracode window.
-17. Wait for the Scanninng... messages to be replaced with results.
+17. Wait for the Scanning... messages to be replaced with results.
 18. 
 
 
