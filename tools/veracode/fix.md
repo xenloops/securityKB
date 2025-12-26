@@ -47,6 +47,8 @@ Veracode Scan must be installed to use Fix.
 
 ## Visual Studio IDE plugin
 
+TODO _Draft notes, will be refined._
+
 1. Create an API credentials file. Vendor recommends using Single-Sign On (SSO) with Just-in-Time (JIT) provisioning for human user accounts.
 2. Install the extension from the Visual Studio Marketplace (in IDE: Extensions menu > Manage Extensions, search for Veracode Scan).
 3. Click Install button.
