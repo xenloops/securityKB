@@ -59,7 +59,12 @@ Veracode Scan must be installed to use Fix.
 10. A new browser window opens with the auth code.
 11. Allow Veracode to access the information it requires.
 12. In Visual Studio, scroll down in the Veracode window. Click Install Agent at the bottom.
-13. 
+13. The Veracode window will automatically advance to its Scan and Review tab.
+14. To see results, a scan must be run on a successfully built project.
+15. Build the project and resolve any errors that appear.
+16. Click the Scan project text at the top of the Veracode window.
+17. Wait for the Scanninng... messages to be replaced with results.
+18. 
 
 
 ## Visual Studio Code IDE plugin
