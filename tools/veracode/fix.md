@@ -5,13 +5,17 @@ Veracode Fix is a remediation solution that helps development teams to get AI/LL
 Fix is available in Veracode Scan, an IDE plugin. The general workflow:
 
 * Developer builds project/solution.
-* Plugin packages the project code into an artifact (e.g. ZIP file).
+* Plugin packages the project code into an artifact (e.g. zip file). The developer can also do this manually.
 * Plugin uploads the artifact to Veracode servers for analysis.
 * Plugin downloads the results and displays them in the IDE.
 
 ## Limitations
 
 Veracode Fix resolves findings found by Pipeline Scan, but doesn't resolve findings found by Upload and Scan.
+
+### Project size
+
+The packaged artifact (e.g. the zip file) must not exceed the total file size limit of 200 MB.
 
 ### Supported languages
 
@@ -32,9 +36,9 @@ Veracode Fix resolves findings found by Pipeline Scan, but doesn't resolve findi
 * IDEs
   * Eclipse
   * JetBrains
-  * Visual Studio 2019 and 2022
+  * Visual Studio 2019 (v16.11.40+) and 2022 (v17.11.4+)
   * Visual Studio Code
-* GitHub Action
+* GitHub Actions
 
 
 # Installation
@@ -43,9 +47,24 @@ Veracode Scan must be installed to use Fix.
 
 ## Visual Studio IDE plugin
 
+1. Create an API credentials file. Vendor recommends using Single-Sign On (SSO) with Just-in-Time (JIT) provisioning for human user accounts.
+2. Install the extension from the Visual Studio Marketplace (in IDE: Extensions menu > Manage Extensions, search for Veracode Scan).
+3. Click Install button.
+4. Close Visual Studio.
+5. When the VSIX Installer prompts, click Modify.
+6. If using SSO, browse and authenticate to Veracode's site.
+7. Start Visual Studio and open a project.
+8. The Veracode Scan options are available under the Tools menu. Select Open Veracode Scan.
+9. The Scan window prompts to Authenticate (select the Commercial region).
+10. A new browser window opens with the auth code.
+11. Allow Veracode to access the information it requires.
+12. In Visual Studio, scroll down in the Veracode window. Click Install Agent at the bottom.
+13. 
 
 
 ## Visual Studio Code IDE plugin
+
+
 
 # Sources
 
