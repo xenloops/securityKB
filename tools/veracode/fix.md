@@ -65,7 +65,7 @@ TODO _Draft notes, will be refined._
 14. To see results, a scan must be run on a successfully built project.
 15. Build the project and resolve any errors that appear.
 16. If the Veracode window isn't showing, click Tools > Open Veracode Scan.
-17. 
+17.  
 18. [Maybe? for API] Click on the company name in the upper-right. Select API Credentials from the drop-down list.
 19. On the next screen, click the GENERATE API CREDENTIALS button.
 20. Copy both ID and secret key to a secure storage (e.g. a password keeper).
