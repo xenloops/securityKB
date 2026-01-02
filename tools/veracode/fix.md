@@ -72,8 +72,14 @@ TODO _Draft notes, will be refined._
 21.
 22. Click the Scan project text at the top of the Veracode window.
 23. Wait for the Scanning... messages to be replaced with results. The Static scan can take a long time, especially with a large codebase.
-24. 
+24. Scroll through any findings that appear. Those findings with Fix-generated fixes have green stars next to them.
+25. Double-click on a finding, then on the "Flaw Details" text that appears below it.
+26. Read the description if necessary, then the text under the Remediation Guidance tab -- it's vitally important that you understand what you're fixing.
+27. Click the Veracode Fix tab to see what the tool suggests.
+28. If one of the options looks appropriate (and you understand it), click Apply Fix.
+29. 
 
+Note that if the project has changed or been rebuilt, or VS was closed since the last scan, the project must be rescanned to be able to apply any suggested fixes.
 
 ## Visual Studio Code IDE plugin
 
