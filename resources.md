@@ -1,7 +1,7 @@
 # Further reading
 
 ## AppSec organizations
-* [OWASP - Open Web Application Security Project](https://owasp.org) Cheatsheets, projects, and guidance, oh my! So much more than the OWASP Top 10 list.
+* [OWASP - Open Worldwide Application Security Project](https://owasp.org) Cheatsheets, projects, and guidance, oh my! So much more than the OWASP Top 10 list.
 * [SAFECode](https://safecode.org) Org for sharing secure best practices.
 * [U.S. National Institute of Standards & Technology](https://www.nist.gov/cybersecurity)
 * [U.S. Cybersecurity & Infrastructrure Security Agency](https://www.cisa.gov)
@@ -9,6 +9,8 @@
 
 ## Secure coding guides and standards
 * [SEI CERT Coding Standards](https://wiki.sei.cmu.edu/confluence/display/seccode/SEI+CERT+Coding+Standards)
+* [OWASP Security Culture](https://owasp.org/www-project-security-culture) - [GitHub](https://github.com/OWASP/security-culture)
+* [OWASP Developer Guide](https://devguide.owasp.org) - [GitHub](https://github.com/OWASP/DevGuide)
 
 ## Training
 * [SAFECode secure coding training videos](https://safecode.org/training)
